@@ -1,0 +1,500 @@
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE EC11
+OBJECT MODULE PLACED IN .\Objects\ec11.obj
+COMPILER INVOKED BY: D:\filegame\keil\C51\BIN\C51.EXE Library\ec11.c OPTIMIZE(8,SPEED) BROWSE INCDIR(D:\filegame\keil\C5
+                    -1\INC\User;.\Library) DEBUG OBJECTEXTEND LISTINCLUDE NOCOND PRINT(.\Listings\ec11.lst) OBJECT(.\Objects\ec11.obj)
+
+line level    source
+
+   1          //---->>>>----ÎÄ¼şÃèÊö£ºEC11Ğı×ª±àÂëÆ÷µ×²ãÇı¶¯³ÌĞò---<<<<----//
+   2          //---->>>>----ÎÄ¼ş°æ±¾£ºV1.0----<<<<----//
+   3          #include "EncoderEC11.h"
+*** WARNING C318 IN LINE 3 OF Library\ec11.c: can't open file 'EncoderEC11.h'
+   4           
+   5          //-------->>>>>>>>--------×¢ÒâÊÂÏî£ºEC11Ğı×ª±àÂëÆ÷µÄÉ¨ÃèÊ±¼ä¼ä¸ô¿ØÖÆÔÚ1~4msÖ®¼ä£¬·ñÔò5ms¼°ÒÔÉÏµÄÉ¨ÃèÊ±¼äÔÚ
+             -¿ìËÙĞı×ªÊ±¿ÉÄÜ»áÎóÅĞĞı×ª·½Ïò--------<<<<<<<<--------//
+   6           
+   7          //*******************************************************************/
+   8          //¹¦ÄÜ£º³õÊ¼»¯EC11Ğı×ª±àÂëÆ÷Ïà¹Ø²ÎÊı
+   9          //ĞÎ²Î£ºEC11Ğı×ª±àÂëÆ÷µÄÀàĞÍ-->>  unsigned char Set_EC11_TYPE  <<--  £º0----Ò»¶¨Î»¶ÔÓ¦Ò»Âö³å£»1£¨»ò·Ç0£©--
+             ---Á½¶¨Î»¶ÔÓ¦Ò»Âö³å¡£
+  10          //·µ»Ø£ºÎŞ
+  11          //Ïê½â£º¶ÔEC11Ğı×ª±àÂëÆ÷µÄÁ¬½ÓIO¿Ú×öIO¿ÚÄ£Ê½ÉèÖÃ¡£ÒÔ¼°½«Ïà¹ØµÄ±äÁ¿½øĞĞ³õÊ¼»¯
+  12          //*******************************************************************/
+  13          void Encoder_EC11_Init(unsigned char Set_EC11_TYPE)
+  14          {
+  15   1          //IO¿ÚÄ£Ê½³õÊ¼»¯¡£³õÊ¼»¯EC11µÄIO¿ÚÎª×¼Ë«ÏòÄ£Ê½
+  16   1          P35_QB();
+*** WARNING C206 IN LINE 16 OF Library\ec11.c: 'P35_QB': missing function-prototype
+  17   1          P36_QB();
+*** WARNING C206 IN LINE 17 OF Library\ec11.c: 'P36_QB': missing function-prototype
+  18   1          P37_QB();
+*** WARNING C206 IN LINE 18 OF Library\ec11.c: 'P37_QB': missing function-prototype
+  19   1          
+  20   1          EC11_A_Now = 1;
+*** ERROR C202 IN LINE 20 OF Library\ec11.c: 'EC11_A_Now': undefined identifier
+  21   1          EC11_B_Now = 1;
+*** ERROR C202 IN LINE 21 OF Library\ec11.c: 'EC11_B_Now': undefined identifier
+  22   1          EC11_Key = 1;
+*** ERROR C202 IN LINE 22 OF Library\ec11.c: 'EC11_Key': undefined identifier
+  23   1       
+  24   1          //EC11ÀàĞÍÑ¡Ôñ£º0-Ò»¶¨Î»Ò»Âö³å£»1-Á½¶¨Î»Ò»Âö³å
+  25   1          if(Set_EC11_TYPE == 0)
+  26   1          {
+  27   2              EC11_Type = 0;
+*** ERROR C202 IN LINE 27 OF Library\ec11.c: 'EC11_Type': undefined identifier
+  28   2          }
+  29   1          else
+  30   1          {
+  31   2              EC11_Type = 1;
+*** ERROR C202 IN LINE 31 OF Library\ec11.c: 'EC11_Type': undefined identifier
+  32   2          }
+  33   1       
+  34   1          //±ÜÃâÉÏµçÊ±EC11ĞıÅ¥Î»ÖÃ²»È·¶¨µ¼ÖÂÒ»´Î¶¯×÷ÎóÅĞ
+  35   1          EC11_A_Last = EC11_A_Now;   
+*** ERROR C202 IN LINE 35 OF Library\ec11.c: 'EC11_A_Last': undefined identifier
+  36   1          EC11_B_Last = EC11_B_Now;
+*** ERROR C202 IN LINE 36 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+  37   1       
+  38   1          //--------Çå³ı°´¼ü¼ÆÊıÆ÷ºÍ±êÖ¾Î»--------//
+  39   1          EC11_KEY_COUNT = 0;                     //EC11°´¼ü¶¯×÷¼ÆÊıÆ÷
+*** ERROR C202 IN LINE 39 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+  40   1          EC11_KEY_DoubleClick_Count = 0;         //EC11°´¼üË«»÷¶¯×÷¼ÆÊıÆ÷
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 2   
+
+*** ERROR C202 IN LINE 40 OF Library\ec11.c: 'EC11_KEY_DoubleClick_Count': undefined identifier
+  41   1          FLAG_EC11_KEY_ShotClick = 0;            //EC11°´¼ü¶Ì°´¶¯×÷±êÖ¾
+*** ERROR C202 IN LINE 41 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+  42   1          FLAG_EC11_KEY_LongClick = 0;            //EC11°´¼ü³¤°´¶¯×÷±êÖ¾
+*** ERROR C202 IN LINE 42 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+  43   1          FLAG_EC11_KEY_DoubleClick = 0;          //EC11°´¼üË«»÷¶¯×÷±êÖ¾
+*** ERROR C202 IN LINE 43 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+  44   1      }
+  45           
+  46           
+  47          //*******************************************************************/
+  48          //¹¦ÄÜ£ºÉ¨ÃèEC11Ğı×ª±àÂëÆ÷µÄ¶¯×÷²¢½«²ÎÊı·µ»Ø¸ø¶¯×÷·ÖÎöº¯ÊıÊ¹ÓÃ
+  49          //ĞÎ²Î£ºEC11Ğı×ª±àÂëÆ÷µÄÀàĞÍ-->>  unsigned char Set_EC11_TYPE  <<--  £º0----Ò»¶¨Î»¶ÔÓ¦Ò»Âö³å£»1£¨»ò·Ç0£©--
+             ---Á½¶¨Î»¶ÔÓ¦Ò»Âö³å
+  50          //·µ»Ø£ºEC11Ğı×ª±àÂëÆ÷µÄÉ¨Ãè½á¹û-->>  char ScanResult  -->>  0£ºÎŞ¶¯×÷£»1£ºÕı×ª£» -1£º·´×ª£»2£ºÖ»°´ÏÂ°´¼ü£
+             -»3£º°´×Å°´¼üÕı×ª£»-3£º°´×Å°´¼ü·´×ª
+  51          //Ïê½â£ºÖ»É¨ÃèEC11Ğı×ª±àÂëÆ÷ÓĞÃ»ÓĞ¶¯×÷£¬²»¹ØĞÄÊÇµÚ¼¸´Î°´ÏÂ°´¼ü»ò³¤°´»òË«»÷¡£·µ»ØÖµÖ±½Ó×÷ÎªĞÎ²Î´«¸ø [ void 
+             -Encoder_EC11_Analyze(char EC11_Value); ] º¯ÊıÊ¹ÓÃ
+  52          //*******************************************************************/
+  53          char Encoder_EC11_Scan()
+  54          {
+  55   1      //ÒÔÏÂ´¢´æA¡¢BÉÏÒ»´ÎÖµµÄ±äÁ¿ÉùÃ÷Îª¾²Ì¬È«¾Ö±äÁ¿£¬·½±ã¶ÔEC11¶ÔÓ¦µÄIO¿Ú×ö³õÊ¼»¯
+  56   1      //  static char EC11_A_Last = 0;
+  57   1      //  static char EC11_B_Last = 0;
+  58   1          char ScanResult = 0;    //·µ»Ø±àÂëÆ÷É¨Ãè½á¹û£¬ÓÃÓÚ·ÖÎö±àÂëÆ÷µÄ¶¯×÷
+  59   1                                  //·µ»ØÖµµÄÈ¡Öµ£º   0£ºÎŞ¶¯×÷£»      1£ºÕı×ª£»           -1£º·´×ª£»  
+  60   1                                  //                  2£ºÖ»°´ÏÂ°´¼ü£»    3£º°´×Å°´¼üÕı×ª£»   -3£º°´×Å°´¼ü·´×ª
+  61   1       
+  62   1                                  //======================================================//
+  63   1          if(EC11_Type == 0)      //================Ò»¶¨Î»¶ÔÓ¦Ò»Âö³åµÄEC11================//
+*** ERROR C202 IN LINE 63 OF Library\ec11.c: 'EC11_Type': undefined identifier
+  64   1          {                       //======================================================//
+  65   2              if(EC11_A_Now != EC11_A_Last)   //ÒÔAÎªÊ±ÖÓ£¬BÎªÊı¾İ¡£Õı×ªÊ±AB·´Ïà£¬·´×ªÊ±ABÍ¬Ïà
+*** ERROR C202 IN LINE 65 OF Library\ec11.c: 'EC11_A_Now': undefined identifier
+  66   2              {
+  67   3                  if(EC11_A_Now == 0)
+*** ERROR C202 IN LINE 67 OF Library\ec11.c: 'EC11_A_Now': undefined identifier
+  68   3                  {
+  69   4                      if(EC11_B_Now ==1)      //Ö»ĞèÒª²É¼¯AµÄÉÏÉıÑØ»òÏÂ½µÑØµÄÈÎÒâÒ»¸ö×´Ì¬£¬ÈôAÏÂ½µÑØÊ±BÎª1£¬Õı×ª
+             -                    
+*** ERROR C202 IN LINE 69 OF Library\ec11.c: 'EC11_B_Now': undefined identifier
+  70   4                          ScanResult = 1;     //Õı×ª
+  71   4       
+  72   4                      else                    //·´×ª
+  73   4                          ScanResult = -1;
+  74   4                  }
+  75   3                  EC11_A_Last = EC11_A_Now;   //¸üĞÂ±àÂëÆ÷ÉÏÒ»¸ö×´Ì¬Ôİ´æ±äÁ¿
+*** ERROR C202 IN LINE 75 OF Library\ec11.c: 'EC11_A_Last': undefined identifier
+  76   3                  EC11_B_Last = EC11_B_Now;   //¸üĞÂ±àÂëÆ÷ÉÏÒ»¸ö×´Ì¬Ôİ´æ±äÁ¿
+*** ERROR C202 IN LINE 76 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+  77   3              }
+  78   2          }   
+  79   1                                  //======================================================//
+  80   1          else                    //================Á½¶¨Î»¶ÔÓ¦Ò»Âö³åµÄEC11================//
+  81   1          {                       //======================================================//
+  82   2              if(EC11_A_Now !=EC11_A_Last)        //µ±A·¢ÉúÌø±äÊ±²É¼¯Bµ±Ç°µÄ×´Ì¬£¬²¢½«BÓëÉÏÒ»´ÎµÄ×´Ì¬½øĞĞ¶Ô±È¡£
+*** ERROR C202 IN LINE 82 OF Library\ec11.c: 'EC11_A_Now': undefined identifier
+  83   2              {                                   //ÈôA 0->1 Ê±£¬B 1->0 Õı×ª£»ÈôA 1->0 Ê±£¬B 0->1 Õı×ª£»
+  84   3                                                  //ÈôA 0->1 Ê±£¬B 0->1 ·´×ª£»ÈôA 1->0 Ê±£¬B 1->0 ·´×ª
+  85   3                  if(EC11_A_Now == 1)     //EC11_AºÍÉÏÒ»´Î×´Ì¬Ïà±È£¬ÎªÉÏÉıÑØ
+*** ERROR C202 IN LINE 85 OF Library\ec11.c: 'EC11_A_Now': undefined identifier
+  86   3                  {
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 3   
+
+  87   4                      if((EC11_B_Last == 1)&&(EC11_B_Now == 0))   //EC11_BºÍÉÏÒ»´Î×´Ì¬Ïà±È£¬ÎªÏÂ½µÑØ
+*** ERROR C202 IN LINE 87 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+  88   4                          ScanResult = 1;                         //Õı×ª
+  89   4       
+  90   4                      if((EC11_B_Last == 0)&&(EC11_B_Now == 1))   //EC11_BºÍÉÏÒ»´Î×´Ì¬Ïà±È£¬ÎªÉÏÉıÑØ            
+             -   
+*** ERROR C202 IN LINE 90 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+  91   4                          ScanResult = -1;                        //·´×ª
+  92   4       
+  93   4                      //>>>>>>>>>>>>>>>>ÏÂÃæÎªÕı×ªÒ»´ÎÔÙ·´×ª»ò·´×ªÒ»´ÎÔÙÕı×ª´¦Àí<<<<<<<<<<<<<<<<//
+  94   4                      if((EC11_B_Last == EC11_B_Now)&&(EC11_B_Now == 0))  //AÉÏÉıÑØÊ±£¬²É¼¯µÄB²»±äÇÒÎª0
+*** ERROR C202 IN LINE 94 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+  95   4                          ScanResult = 1;                                 //Õı×ª
+  96   4       
+  97   4                      if((EC11_B_Last == EC11_B_Now)&&(EC11_B_Now == 1))  //AÉÏÉıÑØÊ±£¬²É¼¯µÄB²»±äÇÒÎª1
+*** ERROR C202 IN LINE 97 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+  98   4                          ScanResult = -1;                                //·´×ª
+  99   4                  }
+ 100   3       
+ 101   3                  else                    //EC11_AºÍÉÏÒ»´Î×´Ì¬Ïà±È£¬ÎªÏÂ½µÑØ
+ 102   3                  {
+ 103   4                      if((EC11_B_Last == 1)&&(EC11_B_Now == 0))   //EC11_BºÍÉÏÒ»´Î×´Ì¬Ïà±È£¬ÎªÏÂ½µÑØ
+*** ERROR C202 IN LINE 103 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+ 104   4                          ScanResult = -1;                        //·´×ª
+ 105   4       
+ 106   4                      if((EC11_B_Last == 0)&&(EC11_B_Now == 1))   //EC11_BºÍÉÏÒ»´Î×´Ì¬Ïà±È£¬ÎªÉÏÉıÑØ
+*** ERROR C202 IN LINE 106 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+ 107   4                          ScanResult = 1;                         //Õı×ª
+ 108   4       
+ 109   4                      //>>>>>>>>>>>>>>>>ÏÂÃæÎªÕı×ªÒ»´ÎÔÙ·´×ª»ò·´×ªÒ»´ÎÔÙÕı×ª´¦Àí<<<<<<<<<<<<<<<<//
+ 110   4                      if((EC11_B_Last == EC11_B_Now)&&(EC11_B_Now == 0))  //AÉÏÉıÑØÊ±£¬²É¼¯µÄB²»±äÇÒÎª0
+*** ERROR C202 IN LINE 110 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+ 111   4                          ScanResult = -1;                                //·´×ª
+ 112   4       
+ 113   4                      if((EC11_B_Last == EC11_B_Now)&&(EC11_B_Now == 1))  //AÉÏÉıÑØÊ±£¬²É¼¯µÄB²»±äÇÒÎª1   
+*** ERROR C202 IN LINE 113 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+ 114   4                          ScanResult = 1;                                 //Õı×ª
+ 115   4       
+ 116   4                  }               
+ 117   3                  EC11_A_Last = EC11_A_Now;   //¸üĞÂ±àÂëÆ÷ÉÏÒ»¸ö×´Ì¬Ôİ´æ±äÁ¿
+*** ERROR C202 IN LINE 117 OF Library\ec11.c: 'EC11_A_Last': undefined identifier
+ 118   3                  EC11_B_Last = EC11_B_Now;   //¸üĞÂ±àÂëÆ÷ÉÏÒ»¸ö×´Ì¬Ôİ´æ±äÁ¿
+*** ERROR C202 IN LINE 118 OF Library\ec11.c: 'EC11_B_Last': undefined identifier
+ 119   3              }
+ 120   2          }                                                                       
+ 121   1       
+ 122   1          if(EC11_Key == 0)   //Èç¹ûEC11µÄ°´¼ü°´ÏÂ£¬²¢ÇÒÃ»ÓĞEC11Ã»ÓĞ×ª¶¯£¬
+*** ERROR C202 IN LINE 122 OF Library\ec11.c: 'EC11_Key': undefined identifier
+ 123   1          {
+ 124   2              if(ScanResult == 0)         //°´ÏÂ°´¼üÊ±Î´×ª¶¯
+ 125   2                  ScanResult = 2;         //·µ»ØÖµÎª2
+ 126   2              else
+ 127   2              {
+ 128   3                  if(ScanResult == 1)     //°´ÏÂ°´¼üÊ±ºòÕı×ª
+ 129   3                      ScanResult = 3;     //·µ»ØÖµÎª3
+ 130   3                  if(ScanResult == -1)    //°´ÏÂ°´¼üÊ±ºò·´×ª
+ 131   3                      ScanResult = -3;    //·µ»ØÖµÎª-3
+ 132   3              }
+ 133   2          }
+ 134   1       
+ 135   1          return ScanResult;      //·µ»ØÖµµÄÈ¡Öµ£º   0£ºÎŞ¶¯×÷£»      1£ºÕı×ª£»           -1£º·´×ª£»
+ 136   1      }                           //              2£ºÖ»°´ÏÂ°´¼ü£»    3£º°´×Å°´¼üÕı×ª£»   -3£º°´×Å°´¼ü·´×ª
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 4   
+
+ 137           
+ 138           
+ 139          //*******************************************************************/
+ 140          //¹¦ÄÜ£º¶ÔEC11Ğı×ª±àÂëÆ÷µÄ¶¯×÷½øĞĞ·ÖÎö£¬²¢×÷³öÏàÓ¦µÄ¶¯×÷´¦Àí´úÂë
+ 141          //ĞÎ²Î£ºÎŞ
+ 142          //·µ»Ø£ºchar AnalyzeResult = 0;Ä¿Ç°ÎŞÓÃ¡£ÈôÔÚ¸Ãº¯ÊıÀï×öÁË¶¯×÷´¦Àí£¬Ôòº¯ÊıµÄ·µ»ØÖµÎŞĞèÀí»á
+ 143          //Ïê½â£º¶ÔEC11Ğı×ª±àÂëÆ÷µÄ¶¯×÷½øĞĞÄ£Ê½·ÖÎö£¬ÊÇµ¥»÷»¹ÊÇË«»÷»¹ÊÇ³¤°´ËÉÊÖ»¹ÊÇÒ»Ö±°´ÏÂ¡£ĞÎ²Î´Ó [ char Encoder_
+             -EC11_Scan(unsigned char Set_EC11_TYPE) ] º¯Êı´«Èë¡£ÔÚ±¾º¯ÊıÄÚĞŞ¸ÄĞèÒªµÄ¶¯×÷´¦Àí´úÂë
+ 144          //*******************************************************************/
+ 145          char Encoder_EC11_Analyze(char EC11_Value)
+ 146          {
+ 147   1          char AnalyzeResult = 0;
+ 148   1          static unsigned int TMP_Value = 0;  //ÖĞ¼ä¼ÆÊıÖµ£¬ÓÃÓÚÁ¬Ğø³¤°´°´¼üµÄ¶¯×÷ÑÓÊ±¼ä¸ô
+ 149   1          //>>>>>>>>>>>>>>>>±àÂëÆ÷Õı×ª´¦Àí³ÌĞò<<<<<<<<<<<<<<<<//
+ 150   1          if(EC11_Value == 1) //Õı×ª
+ 151   1          {
+ 152   2              //--------±àÂëÆ÷Õı×ª¶¯×÷´úÂë--------//
+ 153   2              switch(EC11_NUM_SW)
+*** ERROR C202 IN LINE 153 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 154   2              {
+ 155   3                  case 1: G_PWM_NUM1+=10; if(G_PWM_NUM1>255)G_PWM_NUM1 = 0;   break;
+*** ERROR C202 IN LINE 155 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 155 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 155 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+ 156   3                  case 2: G_PWM_NUM2+=10; if(G_PWM_NUM1>255)G_PWM_NUM2 = 0;   break;
+*** ERROR C202 IN LINE 156 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 156 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 156 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+ 157   3                  case 3: G_PWM_NUM3+=10; if(G_PWM_NUM1>255)G_PWM_NUM3 = 0;   break;
+*** ERROR C202 IN LINE 157 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 157 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 157 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+ 158   3                  case 4: G_PWM_NUM1+=10;     if(G_PWM_NUM1>255)G_PWM_NUM1 = 0;   G_PWM_NUM3 = G_PWM_NUM2 = G_PW
+             -M_NUM1;   break;
+*** ERROR C202 IN LINE 158 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 158 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 158 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 158 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+ 159   3                  case 5: G_PWM_NUM1+=20; if(G_PWM_NUM1>=255){G_PWM_NUM1 = 0;G_PWM_NUM3+=20;if(G_PWM_NUM3>=255){
+             -G_PWM_NUM3 = 0;G_PWM_NUM2+=20;if(G_PWM_NUM2 >=255)G_PWM_NUM2 = 0;}}
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 159 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+ 160   3                  default :break;
+ 161   3              }
+ 162   2              
+ 163   2          }
+ 164   1       
+ 165   1          //>>>>>>>>>>>>>>>>±àÂëÆ÷·´×ª´¦Àí³ÌĞò<<<<<<<<<<<<<<<<//
+ 166   1          if(EC11_Value == -1)    //·´×ª
+ 167   1          {
+ 168   2              //--------±àÂëÆ÷·´×ª¶¯×÷´úÂë--------//
+ 169   2              switch(EC11_NUM_SW)
+*** ERROR C202 IN LINE 169 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 170   2              {
+ 171   3                  case 1: G_PWM_NUM1-=10; if(G_PWM_NUM1<0)G_PWM_NUM1 = 255;   break;
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 5   
+
+*** ERROR C202 IN LINE 171 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 171 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 171 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+ 172   3                  case 2: G_PWM_NUM2-=10; if(G_PWM_NUM2<0)G_PWM_NUM1 = 255;   break;
+*** ERROR C202 IN LINE 172 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 172 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 172 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+ 173   3                  case 3: G_PWM_NUM3-=10; if(G_PWM_NUM3<0)G_PWM_NUM1 = 255;   break;
+*** ERROR C202 IN LINE 173 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 173 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 173 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+ 174   3                  case 4: G_PWM_NUM1-=10; if(G_PWM_NUM1<0)G_PWM_NUM1 = 255;   G_PWM_NUM3 = G_PWM_NUM2 = G_PWM_NU
+             -M1;   break;
+*** ERROR C202 IN LINE 174 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 174 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 174 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 174 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+ 175   3                  case 5: G_PWM_NUM1-=20; if(G_PWM_NUM1<0){G_PWM_NUM1 = 255;G_PWM_NUM3-=20;if(G_PWM_NUM3<0){G_PW
+             -M_NUM3 = 255;G_PWM_NUM2-=20;if(G_PWM_NUM2 <0)G_PWM_NUM2 = 255;}}
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+*** ERROR C202 IN LINE 175 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+ 176   3                  default :break;
+ 177   3              }
+ 178   2              
+ 179   2          }
+ 180   1       
+ 181   1       
+ 182   1          //>>>>>>>>>>>>>>>>±àÂëÆ÷°´¼ü°´ÏÂ²¢Õı×ª´¦Àí³ÌĞò<<<<<<<<<<<<<<<<//
+ 183   1          if(EC11_Value == 3)
+ 184   1          {
+ 185   2              //--------±àÂëÆ÷°´¼ü°´ÏÂ²¢Õı×ª¶¯×÷´úÂë--------//
+ 186   2              
+ 187   2              
+ 188   2          }
+ 189   1       
+ 190   1          //>>>>>>>>>>>>>>>>±àÂëÆ÷°´¼ü°´ÏÂ²¢·´×ª´¦Àí³ÌĞò<<<<<<<<<<<<<<<<//
+ 191   1          if(EC11_Value == -3)
+ 192   1          {
+ 193   2              //--------±àÂëÆ÷°´¼ü°´ÏÂ²¢·´×ª¶¯×÷´úÂë--------//
+ 194   2              
+ 195   2              
+ 196   2          }
+ 197   1       
+ 198   1       
+ 199   1          //>>>>>>>>>>>>>>>>±àÂëÆ÷°´¼ü°´ÏÂ´¦Àí³ÌĞò<<<<<<<<<<<<<<<<//
+ 200   1          if(EC11_Value == 2)     //====¼ì²âµ½°´¼ü°´ÏÂ====//
+ 201   1          {
+ 202   2              if(EC11_KEY_COUNT<10000)    //´ò¿ª°´¼ü°´ÏÂÊ±¼ä¶¨Ê±Æ÷
+*** ERROR C202 IN LINE 202 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 203   2                  EC11_KEY_COUNT++;
+*** ERROR C202 IN LINE 203 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 204   2              if(EC11_KEY_COUNT == KEY_COUNT_DESHAKING)   //°´ÏÂ°´¼üÊ±¼äµ½´ïÏû¶¶Ê±¼äÊ±
+*** ERROR C202 IN LINE 204 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 205   2              {                                           //ÖÃÎ»¶Ì°´°´¼ü±êÖ¾
+ 206   3                  FLAG_EC11_KEY_ShotClick = 1;
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 6   
+
+*** ERROR C202 IN LINE 206 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 207   3              }
+ 208   2       
+ 209   2              if((EC11_KEY_DoubleClick_Count > 0)&&(EC11_KEY_DoubleClick_Count <= KEY_COUNT_DUALCLICKTIME))   //
+             -ËÉ¿ª°´¼üºó£¬ÓÖÔÚ¶¨Ê±Æ÷ÔÚË«»÷Ê±¼äÄÚ°´ÏÂ°´¼ü
+*** ERROR C202 IN LINE 209 OF Library\ec11.c: 'EC11_KEY_DoubleClick_Count': undefined identifier
+ 210   2              {                                                                                               //
+             -ÖÃÎ»Ë«»÷°´¼ü±êÖ¾
+ 211   3                  FLAG_EC11_KEY_DoubleClick = 1;
+*** ERROR C202 IN LINE 211 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 212   3              }
+ 213   2       
+ 214   2              if(EC11_KEY_COUNT == KEY_COUNT_LONGTIME)    //°´ÏÂ°´¼üÊ±¼äµ½´ï³¤°´Ê±¼ä
+*** ERROR C202 IN LINE 214 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 215   2              {                                           //ÖÃÎ»³¤°´°´¼ü±êÖ¾²¢¸´Î»¶Ì°´°´¼ü±êÖ¾
+ 216   3                  FLAG_EC11_KEY_LongClick = 1;
+*** ERROR C202 IN LINE 216 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+ 217   3                  FLAG_EC11_KEY_ShotClick = 0;
+*** ERROR C202 IN LINE 217 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 218   3              }
+ 219   2       
+ 220   2          }
+ 221   1          else                    //====¼ì²âµ½°´¼üËÉ¿ª====//     
+ 222   1          {
+ 223   2              if(EC11_KEY_COUNT < KEY_COUNT_DESHAKING)    //Ã»µ½Ïû¶¶Ê±³¤¾ÍËÉ¿ª°´¼ü£¬¸´Î»ËùÓĞ¶¨Ê±Æ÷ºÍ°´¼ü±êÖ¾
+*** ERROR C202 IN LINE 223 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 224   2              {
+ 225   3                  EC11_KEY_COUNT = 0;
+*** ERROR C202 IN LINE 225 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 226   3                  FLAG_EC11_KEY_ShotClick = 0;
+*** ERROR C202 IN LINE 226 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 227   3                  FLAG_EC11_KEY_LongClick = 0;
+*** ERROR C202 IN LINE 227 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+ 228   3                  FLAG_EC11_KEY_DoubleClick = 0;
+*** ERROR C202 IN LINE 228 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 229   3                  EC11_KEY_DoubleClick_Count = 0;
+*** ERROR C202 IN LINE 229 OF Library\ec11.c: 'EC11_KEY_DoubleClick_Count': undefined identifier
+ 230   3              }
+ 231   2              else
+ 232   2              {
+ 233   3                  
+ 234   3                  if(FLAG_EC11_KEY_ShotClick == 1)        //¶Ì°´°´¼ü¶¨Ê±ÓĞĞ§ÆÚ¼ä
+*** ERROR C202 IN LINE 234 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 235   3                  {
+ 236   4                      if((FLAG_EC11_KEY_DoubleClick == 0)&&(EC11_KEY_DoubleClick_Count >= 0)) 
+*** ERROR C202 IN LINE 236 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 237   4                          EC11_KEY_DoubleClick_Count++;
+*** ERROR C202 IN LINE 237 OF Library\ec11.c: 'EC11_KEY_DoubleClick_Count': undefined identifier
+ 238   4                      if((FLAG_EC11_KEY_DoubleClick == 1)&&(EC11_KEY_DoubleClick_Count <= KEY_COUNT_DUALCLICKTIM
+             -E))   //Èç¹ûÔÚ¹æ¶¨Ë«»÷Ê±¼äÄÚÔÙ´Î°´ÏÂ°´¼ü
+*** ERROR C202 IN LINE 238 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 239   4                      {                                                                                         
+             -      //ÈÏÎª°´¼üÊÇË«»÷¶¯×÷
+ 240   5                          FLAG_EC11_KEY_DoubleClick = 2;
+*** ERROR C202 IN LINE 240 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 241   5                      }   
+ 242   4       
+ 243   4                      if((FLAG_EC11_KEY_DoubleClick == 0)&&(EC11_KEY_DoubleClick_Count > KEY_COUNT_DUALCLICKTIME
+             -))    //Èç¹ûÃ»ÓĞÔÚ¹æ¶¨Ë«»÷Ê±¼äÄÚÔÙ´Î°´ÏÂ°´¼ü
+*** ERROR C202 IN LINE 243 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 244   4                          FLAG_EC11_KEY_ShotClick = 0;                                                          
+             -      //ÈÏÎª°´¼üÊÇµ¥»÷¶¯×÷
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 7   
+
+*** ERROR C202 IN LINE 244 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 245   4                  }
+ 246   3       
+ 247   3                  if(FLAG_EC11_KEY_LongClick == 1)        //¼ì²âµ½³¤°´°´¼üËÉ¿ª
+*** ERROR C202 IN LINE 247 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+ 248   3                      FLAG_EC11_KEY_LongClick = 0;
+*** ERROR C202 IN LINE 248 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+ 249   3              }
+ 250   2       
+ 251   2          }
+ 252   1       
+ 253   1       
+ 254   1          //>>>>>>>>>>>>>>>>±àÂëÆ÷°´¼ü·ÖÎö´¦Àí³ÌĞò<<<<<<<<<<<<<<<<//
+ 255   1          if(EC11_KEY_COUNT > KEY_COUNT_DESHAKING)    //¶Ì°´°´¼üÑÓÊ±µ½ÁËÊ±¼ä
+*** ERROR C202 IN LINE 255 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 256   1          {
+ 257   2       
+ 258   2              //¶Ì°´°´¼ü¶¯×÷½áÊø´úÂë
+ 259   2              if((FLAG_EC11_KEY_ShotClick == 0)&&(EC11_KEY_DoubleClick_Count > KEY_COUNT_DUALCLICKTIME)&&(EC11_K
+             -EY_COUNT < KEY_COUNT_LONGTIME))   //¶Ì°´°´¼ü¶¯×÷½áÊø´úÂë
+*** ERROR C202 IN LINE 259 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 260   2              {
+ 261   3                  //--------¶Ì°´°´¼ü¶¯×÷½áÊø´úÂë--------//
+ 262   3                  EC11_NUM_SW++;
+*** ERROR C202 IN LINE 262 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 263   3                  if(EC11_NUM_SW >= 4)
+*** ERROR C202 IN LINE 263 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 264   3                      EC11_NUM_SW = 1;
+*** ERROR C202 IN LINE 264 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 265   3                  AnalyzeResult = 1;
+ 266   3                  //--------Çå³ı±êÖ¾Î»--------//
+ 267   3                  EC11_KEY_COUNT = 0;
+*** ERROR C202 IN LINE 267 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 268   3                  EC11_KEY_DoubleClick_Count = 0;
+*** ERROR C202 IN LINE 268 OF Library\ec11.c: 'EC11_KEY_DoubleClick_Count': undefined identifier
+ 269   3                  FLAG_EC11_KEY_DoubleClick = 0;
+*** ERROR C202 IN LINE 269 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 270   3              }
+ 271   2       
+ 272   2              //Ë«»÷°´¼ü¶¯×÷½áÊø´úÂë
+ 273   2              if((FLAG_EC11_KEY_DoubleClick == 2)&&(EC11_KEY_DoubleClick_Count > 0)&&(EC11_KEY_DoubleClick_Count
+             - <= KEY_COUNT_DUALCLICKTIME)) //Ë«»÷°´¼ü¶¯×÷½áÊø´úÂë
+*** ERROR C202 IN LINE 273 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 274   2              {
+ 275   3                  //--------Ë«»÷°´¼ü¶¯×÷½áÊø´úÂë--------//
+ 276   3                  if(EC11_NUM_SW == 5)
+*** ERROR C202 IN LINE 276 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 277   3                      EC11_NUM_SW = 0;
+*** ERROR C202 IN LINE 277 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 278   3                  if(EC11_NUM_SW == 4)
+*** ERROR C202 IN LINE 278 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 279   3                      EC11_NUM_SW = 5;
+*** ERROR C202 IN LINE 279 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 280   3       
+ 281   3                  if(EC11_NUM_SW <4)
+*** ERROR C202 IN LINE 281 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 282   3                  {
+ 283   4                      EC11_NUM_SW = 4;
+*** ERROR C202 IN LINE 283 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 284   4                  }
+ 285   3                  AnalyzeResult = 2;
+ 286   3                  //--------Çå³ı±êÖ¾Î»--------//
+C51 COMPILER V9.54   EC11                                                                  10/04/2022 10:21:36 PAGE 8   
+
+ 287   3                  EC11_KEY_COUNT = 0;
+*** ERROR C202 IN LINE 287 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 288   3                  EC11_KEY_DoubleClick_Count = 0;
+*** ERROR C202 IN LINE 288 OF Library\ec11.c: 'EC11_KEY_DoubleClick_Count': undefined identifier
+ 289   3                  FLAG_EC11_KEY_ShotClick = 0;
+*** ERROR C202 IN LINE 289 OF Library\ec11.c: 'FLAG_EC11_KEY_ShotClick': undefined identifier
+ 290   3                  FLAG_EC11_KEY_DoubleClick = 0;
+*** ERROR C202 IN LINE 290 OF Library\ec11.c: 'FLAG_EC11_KEY_DoubleClick': undefined identifier
+ 291   3                  
+ 292   3              }
+ 293   2       
+ 294   2              //Á¬Ğø³¤°´°´¼ü°´ÏÂ´úÂë
+ 295   2              if((FLAG_EC11_KEY_LongClick == 1)&&(EC11_KEY_COUNT >= KEY_COUNT_LONGTIME))  //Á¬Ğø³¤°´°´¼ü°´ÏÂ´úÂë
+*** ERROR C202 IN LINE 295 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+ 296   2              {
+ 297   3                  TMP_Value ++;
+ 298   3                  if(TMP_Value % KEY_LONG_REPEAT_TIME == 0)
+*** ERROR C202 IN LINE 298 OF Library\ec11.c: 'KEY_LONG_REPEAT_TIME': undefined identifier
+ 299   3                  {
+ 300   4                      TMP_Value = 0;
+ 301   4                      //-------Á¬Ğø³¤°´°´¼ü°´ÏÂ´úÂë--------//
+ 302   4                      AnalyzeResult = 4;
+ 303   4                  }
+ 304   3              }
+ 305   2       
+ 306   2              //³¤°´°´¼ü¶¯×÷½áÊø´úÂë
+ 307   2              if((FLAG_EC11_KEY_LongClick == 0)&&(EC11_KEY_COUNT >= KEY_COUNT_LONGTIME))  //³¤°´°´¼ü¶¯×÷½áÊø´úÂë
+*** ERROR C202 IN LINE 307 OF Library\ec11.c: 'FLAG_EC11_KEY_LongClick': undefined identifier
+ 308   2              {                                                                           
+ 309   3                  //--------³¤°´°´¼ü°´ÏÂ¶¯×÷½áÊø´úÂë--------//
+ 310   3                  EC11_NUM_SW = 0;
+*** ERROR C202 IN LINE 310 OF Library\ec11.c: 'EC11_NUM_SW': undefined identifier
+ 311   3                  G_PWM_NUM1 = 0x20;
+*** ERROR C202 IN LINE 311 OF Library\ec11.c: 'G_PWM_NUM1': undefined identifier
+ 312   3                  G_PWM_NUM2 = 0x20;
+*** ERROR C202 IN LINE 312 OF Library\ec11.c: 'G_PWM_NUM2': undefined identifier
+ 313   3                  G_PWM_NUM3 = 0x20;
+*** ERROR C202 IN LINE 313 OF Library\ec11.c: 'G_PWM_NUM3': undefined identifier
+ 314   3                  AnalyzeResult = 3;
+ 315   3                  //--------Çå³ı±êÖ¾Î»--------//
+ 316   3                  EC11_KEY_COUNT = 0;
+*** ERROR C202 IN LINE 316 OF Library\ec11.c: 'EC11_KEY_COUNT': undefined identifier
+ 317   3              }
+ 318   2       
+ 319   2       
+ 320   2          }
+ 321   1          return AnalyzeResult;
+ 322   1      }
+
+C51 COMPILATION COMPLETE.  4 WARNING(S),  128 ERROR(S)

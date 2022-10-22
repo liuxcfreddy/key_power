@@ -1,0 +1,6 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\EncoderEC11.obj",
+".\Objects\adc0832.obj" 
+TO ".\Objects\power" 
+PRINT(".\Listings\power.m51") RAMSIZE(256) 

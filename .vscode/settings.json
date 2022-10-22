@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "reg52.h": "c",
+        "REG52.H": "cpp",
+        "intrins.h": "c",
+        "INTRINS.H": "cpp",
+        "stc89c5xrc.h": "c"
+    }
+}

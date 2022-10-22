@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj",
+".\Objects\EncoderEC11.obj" 
+TO ".\Objects\开关电源" 
+PRINT(".\Listings\开关电源.m51") RAMSIZE(256) 

@@ -1,0 +1,375 @@
+C51 COMPILER V9.54   ADC0832                                                               10/22/2022 17:13:06 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE ADC0832
+OBJECT MODULE PLACED IN .\Objects\adc0832.obj
+COMPILER INVOKED BY: D:\filegame\keil\C51\BIN\C51.EXE adc0832.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Library;D:\filegame\ke
+                    -il\C51\INC\STC;D:\filegame\keil\C51\INC\User;..\key_power) DEBUG OBJECTEXTEND LISTINCLUDE NOCOND PRINT(.\Listings\adc083
+                    -2.lst) OBJECT(.\Objects\adc0832.obj)
+
+line level    source
+
+   1          #include "adc0832.h"
+   1      =1  #ifndef __adc0832_h_
+   2      =1  #define __adc0832_h_
+   3      =1  
+   4      =1  #include <STC89C5xRC.H>
+   1      =2  #ifndef __STC89C5xRC_H__
+   2      =2  #define __STC89C5xRC_H__
+   3      =2  
+   4      =2  /////////////////////////////////////////////////
+   5      =2  
+   6      =2  /* The following is STC additional SFR */
+   7      =2  
+   8      =2  /* sfr  AUXR  = 0x8e; */
+   9      =2  /* sfr  AUXR1 = 0xa2; */
+  10      =2  /* sfr  IPH   = 0xb7; */
+  11      =2  
+  12      =2  sfr  P4  = 0xE8;
+  13      =2  sbit P46 = P4^6;
+  14      =2  sbit P45 = P4^5;       //ISP下载需勾选"ALE脚用作P4.5口"
+  15      =2  sbit P44 = P4^4;
+  16      =2  sbit P43 = P4^3;
+  17      =2  sbit P42 = P4^2;
+  18      =2  sbit P41 = P4^1;
+  19      =2  sbit P40 = P4^0;
+  20      =2  
+  21      =2  sfr  XICON = 0xc0;
+  22      =2  
+  23      =2  sfr  WDT_CONTR = 0xe1;
+  24      =2  
+  25      =2  sfr ISP_DATA  = 0xe2;
+  26      =2  sfr ISP_ADDRH = 0xe3;
+  27      =2  sfr ISP_ADDRL = 0xe4;
+  28      =2  sfr ISP_CMD   = 0xe5;
+  29      =2  sfr ISP_TRIG  = 0xe6;
+  30      =2  sfr ISP_CONTR = 0xe7;
+  31      =2  
+  32      =2  /* Above is STC additional SFR */
+  33      =2  
+  34      =2  /*--------------------------------------------------------------------------
+  35      =2  REG51F.H
+  36      =2  
+  37      =2  Header file for 8xC31/51, 80C51Fx, 80C51Rx+
+  38      =2  Copyright (c) 1988-1999 Keil Elektronik GmbH and Keil Software, Inc.
+  39      =2  All rights reserved.
+  40      =2  
+  41      =2  Modification according to DataSheet from April 1999
+  42      =2   - SFR's AUXR and AUXR1 added for 80C51Rx+ derivatives
+  43      =2  --------------------------------------------------------------------------*/
+  44      =2  
+  45      =2  /*  BYTE Registers  */
+  46      =2  sfr P0   = 0x80;
+  47      =2  sbit P00 = P0^0;
+  48      =2  sbit P01 = P0^1;
+C51 COMPILER V9.54   ADC0832                                                               10/22/2022 17:13:06 PAGE 2   
+
+  49      =2  sbit P02 = P0^2;
+  50      =2  sbit P03 = P0^3;
+  51      =2  sbit P04 = P0^4;
+  52      =2  sbit P05 = P0^5;
+  53      =2  sbit P06 = P0^6;
+  54      =2  sbit P07 = P0^7;
+  55      =2  sfr P1   = 0x90;
+  56      =2  sbit P10 = P1^0;
+  57      =2  sbit P11 = P1^1;
+  58      =2  sbit P12 = P1^2;
+  59      =2  sbit P13 = P1^3;
+  60      =2  sbit P14 = P1^4;
+  61      =2  sbit P15 = P1^5;
+  62      =2  sbit P16 = P1^6;
+  63      =2  sbit P17 = P1^7;
+  64      =2  sfr P2   = 0xA0;
+  65      =2  sbit P20 = P2^0;
+  66      =2  sbit P21 = P2^1;
+  67      =2  sbit P22 = P2^2;
+  68      =2  sbit P23 = P2^3;
+  69      =2  sbit P24 = P2^4;
+  70      =2  sbit P25 = P2^5;
+  71      =2  sbit P26 = P2^6;
+  72      =2  sbit P27 = P2^7;
+  73      =2  sfr P3   = 0xB0;
+  74      =2  sbit P30 = P3^0;
+  75      =2  sbit P31 = P3^1;
+  76      =2  sbit P32 = P3^2;
+  77      =2  sbit P33 = P3^3;
+  78      =2  sbit P34 = P3^4;
+  79      =2  sbit P35 = P3^5;
+  80      =2  sbit P36 = P3^6;
+  81      =2  sbit P37 = P3^7;
+  82      =2  sfr PSW  = 0xD0;
+  83      =2  sfr ACC  = 0xE0;
+  84      =2  sfr B    = 0xF0;
+  85      =2  sfr SP   = 0x81;
+  86      =2  sfr DPL  = 0x82;
+  87      =2  sfr DPH  = 0x83;
+  88      =2  sfr PCON = 0x87;
+  89      =2  sfr TCON = 0x88;
+  90      =2  sfr TMOD = 0x89;
+  91      =2  sfr TL0  = 0x8A;
+  92      =2  sfr TL1  = 0x8B;
+  93      =2  sfr TH0  = 0x8C;
+  94      =2  sfr TH1  = 0x8D;
+  95      =2  sfr IE   = 0xA8;
+  96      =2  sfr IP   = 0xB8;
+  97      =2  sfr SCON = 0x98;
+  98      =2  sfr SBUF = 0x99;
+  99      =2  
+ 100      =2  /*  80C51Fx/Rx Extensions  */
+ 101      =2  sfr AUXR   = 0x8E;
+ 102      =2  sfr AUXR1  = 0xA2;
+ 103      =2  sfr SADDR  = 0xA9;
+ 104      =2  sfr IPH    = 0xB7;
+ 105      =2  sfr SADEN  = 0xB9;
+ 106      =2  sfr T2CON  = 0xC8;
+ 107      =2  sfr T2MOD  = 0xC9;
+ 108      =2  sfr RCAP2L = 0xCA;
+ 109      =2  sfr RCAP2H = 0xCB;
+ 110      =2  sfr TL2    = 0xCC;
+C51 COMPILER V9.54   ADC0832                                                               10/22/2022 17:13:06 PAGE 3   
+
+ 111      =2  sfr TH2    = 0xCD;
+ 112      =2  
+ 113      =2  /* PCA SFR
+ 114      =2  sfr CCON   = 0xD8;
+ 115      =2  sfr CMOD   = 0xD9;
+ 116      =2  sfr CCAPM0 = 0xDA;
+ 117      =2  sfr CCAPM1 = 0xDB;
+ 118      =2  sfr CCAPM2 = 0xDC;
+ 119      =2  sfr CCAPM3 = 0xDD;
+ 120      =2  sfr CCAPM4 = 0xDE;
+ 121      =2  sfr CL     = 0xE9;
+ 122      =2  sfr CCAP0L = 0xEA;
+ 123      =2  sfr CCAP1L = 0xEB;
+ 124      =2  sfr CCAP2L = 0xEC;
+ 125      =2  sfr CCAP3L = 0xED;
+ 126      =2  sfr CCAP4L = 0xEE;
+ 127      =2  sfr CH     = 0xF9;
+ 128      =2  sfr CCAP0H = 0xFA;
+ 129      =2  sfr CCAP1H = 0xFB;
+ 130      =2  sfr CCAP2H = 0xFC;
+ 131      =2  sfr CCAP3H = 0xFD;
+ 132      =2  sfr CCAP4H = 0xFE;
+ 133      =2  */
+ 134      =2  
+ 135      =2  /*  BIT Registers  */
+ 136      =2  /*  PSW   */
+ 137      =2  sbit CY   = PSW^7;
+ 138      =2  sbit AC   = PSW^6;
+ 139      =2  sbit F0   = PSW^5;
+ 140      =2  sbit RS1  = PSW^4;
+ 141      =2  sbit RS0  = PSW^3;
+ 142      =2  sbit OV   = PSW^2;
+ 143      =2  sbit F1   = PSW^1;
+ 144      =2  sbit P    = PSW^0;
+ 145      =2  
+ 146      =2  /*  TCON  */
+ 147      =2  sbit TF1  = TCON^7;
+ 148      =2  sbit TR1  = TCON^6;
+ 149      =2  sbit TF0  = TCON^5;
+ 150      =2  sbit TR0  = TCON^4;
+ 151      =2  sbit IE1  = TCON^3;
+ 152      =2  sbit IT1  = TCON^2;
+ 153      =2  sbit IE0  = TCON^1;
+ 154      =2  sbit IT0  = TCON^0;
+ 155      =2  
+ 156      =2  /*  IE   */
+ 157      =2  sbit EA   = IE^7;
+ 158      =2  sbit EC   = IE^6;
+ 159      =2  sbit ET2  = IE^5;
+ 160      =2  sbit ES   = IE^4;
+ 161      =2  sbit ET1  = IE^3;
+ 162      =2  sbit EX1  = IE^2;
+ 163      =2  sbit ET0  = IE^1;
+ 164      =2  sbit EX0  = IE^0;
+ 165      =2  
+ 166      =2  /*  IP   */ 
+ 167      =2  /*  sbit PPC  = IP^6;*/
+ 168      =2  sbit PT2  = IP^5;
+ 169      =2  sbit PS   = IP^4;
+ 170      =2  sbit PT1  = IP^3;
+ 171      =2  sbit PX1  = IP^2;
+ 172      =2  sbit PT0  = IP^1;
+C51 COMPILER V9.54   ADC0832                                                               10/22/2022 17:13:06 PAGE 4   
+
+ 173      =2  sbit PX0  = IP^0;
+ 174      =2  
+ 175      =2  /*  P3  */
+ 176      =2  sbit RD   = P3^7;
+ 177      =2  sbit WR   = P3^6;
+ 178      =2  sbit T1   = P3^5;
+ 179      =2  sbit T0   = P3^4;
+ 180      =2  sbit INT1 = P3^3;
+ 181      =2  sbit INT0 = P3^2;
+ 182      =2  sbit TXD  = P3^1;
+ 183      =2  sbit RXD  = P3^0;
+ 184      =2  
+ 185      =2  /*  SCON  */
+ 186      =2  sbit SM0  = SCON^7; // alternatively "FE"
+ 187      =2  sbit FE   = SCON^7;
+ 188      =2  sbit SM1  = SCON^6;
+ 189      =2  sbit SM2  = SCON^5;
+ 190      =2  sbit REN  = SCON^4;
+ 191      =2  sbit TB8  = SCON^3;
+ 192      =2  sbit RB8  = SCON^2;
+ 193      =2  sbit TI   = SCON^1;
+ 194      =2  sbit RI   = SCON^0;
+ 195      =2               
+ 196      =2  /*  P1  */
+ 197      =2  /* PCA
+ 198      =2  sbit CEX4 = P1^7;
+ 199      =2  sbit CEX3 = P1^6;
+ 200      =2  sbit CEX2 = P1^5;
+ 201      =2  sbit CEX1 = P1^4;
+ 202      =2  sbit CEX0 = P1^3;
+ 203      =2  sbit ECI  = P1^2;
+ 204      =2  */
+ 205      =2  
+ 206      =2  sbit T2EX = P1^1;
+ 207      =2  sbit T2   = P1^0;
+ 208      =2  
+ 209      =2  /*  T2CON  */
+ 210      =2  sbit TF2   = T2CON^7;
+ 211      =2  sbit EXF2  = T2CON^6;
+ 212      =2  sbit RCLK  = T2CON^5;
+ 213      =2  sbit TCLK  = T2CON^4;
+ 214      =2  sbit EXEN2 = T2CON^3;
+ 215      =2  sbit TR2   = T2CON^2;
+ 216      =2  sbit C_T2  = T2CON^1;
+ 217      =2  sbit CP_RL2= T2CON^0;
+ 218      =2  
+ 219      =2  /*  CCON  */
+ 220      =2  /*  PCA
+ 221      =2  sbit CF    = CCON^7;
+ 222      =2  sbit CR    = CCON^6;
+ 223      =2  
+ 224      =2  sbit CCF4  = CCON^4;
+ 225      =2  sbit CCF3  = CCON^3;
+ 226      =2  sbit CCF2  = CCON^2;
+ 227      =2  sbit CCF1  = CCON^1;
+ 228      =2  sbit CCF0  = CCON^0;
+ 229      =2  */
+ 230      =2  
+ 231      =2  /////////////////////////////////////////////////
+ 232      =2  
+ 233      =2  #endif
+ 234      =2  
+C51 COMPILER V9.54   ADC0832                                                               10/22/2022 17:13:06 PAGE 5   
+
+   5      =1  
+   6      =1  sbit CS_0832 = P1^3;  //使能端
+   7      =1  sbit CLK_0832 = P3^5;//时钟接口
+   8      =1  sbit DO_0832 = P1^5;    // 数据输出DI、DO不同时有效，可共用一个接口
+   9      =1  sbit DI_0832 = P1^4;  //通道选择
+  10      =1  
+  11      =1  unsigned char read0832();
+  12      =1  
+  13      =1  #endif
+   2          
+   3          #include "intrins.h"
+   1      =1  /*--------------------------------------------------------------------------
+   2      =1  INTRINS.H
+   3      =1  
+   4      =1  Intrinsic functions for C51.
+   5      =1  Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
+   6      =1  All rights reserved.
+   7      =1  --------------------------------------------------------------------------*/
+   8      =1  
+   9      =1  #ifndef __INTRINS_H__
+  10      =1  #define __INTRINS_H__
+  11      =1  
+  12      =1  #pragma SAVE
+  13      =1  
+  14      =1  #if defined (__CX2__)
+  18      =1  
+  19      =1  extern void          _nop_     (void);
+  20      =1  extern bit           _testbit_ (bit);
+  21      =1  extern unsigned char _cror_    (unsigned char, unsigned char);
+  22      =1  extern unsigned int  _iror_    (unsigned int,  unsigned char);
+  23      =1  extern unsigned long _lror_    (unsigned long, unsigned char);
+  24      =1  extern unsigned char _crol_    (unsigned char, unsigned char);
+  25      =1  extern unsigned int  _irol_    (unsigned int,  unsigned char);
+  26      =1  extern unsigned long _lrol_    (unsigned long, unsigned char);
+  27      =1  extern unsigned char _chkfloat_(float);
+  28      =1  #if defined (__CX2__)
+  32      =1  #if !defined (__CX2__)
+  33      =1  extern void          _push_    (unsigned char _sfr);
+  34      =1  extern void          _pop_     (unsigned char _sfr);
+  35      =1  #endif
+  36      =1  
+  37      =1  #pragma RESTORE
+  38      =1  
+  39      =1  #endif
+  40      =1  
+   4          void Delay50us()                //@12.000MHz
+   5          {
+   6   1              unsigned char i;
+   7   1      
+   8   1              _nop_();
+   9   1              i = 22;
+  10   1              while (--i);
+  11   1      }
+  12          
+  13          void pulse0832(){ 
+  14   1              Delay50us();
+  15   1              CLK_0832=1;
+  16   1              Delay50us();
+  17   1              CLK_0832=0;
+  18   1      }  //定义函数
+  19          
+  20          //把模拟电压值转换成8位二进制数并返回
+C51 COMPILER V9.54   ADC0832                                                               10/22/2022 17:13:06 PAGE 6   
+
+  21          unsigned char read0832()
+  22          {
+  23   1              unsigned char i, ch = 0, ch1 = 0;
+  24   1              CS_0832=0;              // 片选，DO为高阻态
+  25   1              
+  26   1              DI_0832=1;
+  27   1              // 此处暂停T-SetUp: 250ns (由pulse0832完成)
+  28   1              pulse0832();    // 第一个脉冲，起始位，DI置高
+  29   1              
+  30   1              DI_0832=1;
+  31   1              pulse0832();    // 第二个脉冲，DI=1表示双通道单极性输入
+  32   1              
+  33   1              DI_0832=0;
+  34   1              pulse0832();    // 第三个脉冲，DI=1表示选择通道1（CH2）
+  35   1              
+  36   1              // 51单片机为准双向IO口：应先写入1再读取
+  37   1              DI_0832=1;
+  38   1              
+  39   1              // MSB FIRST DATA
+  40   1              for(i = 0; i < 8; ++i) {
+  41   2                      pulse0832();
+  42   2                      ch <<= 1;
+  43   2                      if(DO_0832==1)
+  44   2                              ch |= 0x01;
+  45   2              }
+  46   1              
+  47   1              // MSB FIRST输出的最后一位与LSB FIRST输出的第一位是在
+  48   1              // 同一个时钟下降沿之后，故此处先执行读取，后执行pulse
+  49   1              // LSB FIRST DATA
+  50   1              for(i = 0; i < 8; ++i) {
+  51   2                      ch1 >>= 1;
+  52   2                      if(DO_0832==1)
+  53   2                              ch1 |= 0x80;
+  54   2                      pulse0832();
+  55   2              }
+  56   1              
+  57   1              CS_0832=1;              // 取消片选，一个转换周期结束
+  58   1              return (ch==ch1) ? ch : 0;              // 返回转换结果
+  59   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     88    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

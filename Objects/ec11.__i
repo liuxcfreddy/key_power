@@ -1,0 +1,1 @@
+"Library\ec11.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(D:\filegame\keil\C51\INC\User;.\Library) DEBUG OBJECTEXTEND LISTINCLUDE NOCOND PRINT(.\Listings\ec11.lst) OBJECT(.\Objects\ec11.obj)
