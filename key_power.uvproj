@@ -400,14 +400,14 @@
               <FilePath>.\Library\STC89C5xRC.h</FilePath>
             </File>
             <File>
-              <FileName>adc0832.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\adc0832.h</FilePath>
-            </File>
-            <File>
               <FileName>adc0832.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\adc0832.c</FilePath>
+              <FilePath>.\Library\adc0832.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc0832.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Library\adc0832.h</FilePath>
             </File>
           </Files>
         </Group>
