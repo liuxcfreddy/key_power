@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 1   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
              -ndroid-4.4.3/prebuilt/darwin-x86/bin/mipsel-linux-android-nm --sysroot=/Users/apple/Downloads/android-ndk-r8//platforms/
              -android-9/arch-mips/ --extra-cflags=' -O3 -DANDROID -DHAVE_SYS_UIO_H=1 -Dipv6mr_interface=ipv6mr_ifindex -fasm -Wno-psab
              -i -fno-short-enums -fno-strict-aliasing -finline-limit=300 -Wno-multichar -fno-exceptions -I/Users/apple/Downloads/dolph
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 2   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 2   
 
              -in_player/dolphin-player/p/jni/bzip2/' --enable-gpl --enable-version3 --disable-shared --enable-static --extra-ldflags='
              --Wl,-rpath-link=/Users/apple/Downloads/android-ndk-r8//platforms/android-9/arch-mips//usr/lib -L/Users/apple/Downloads/a
@@ -126,7 +126,7 @@ line level    source
   54      =2  #define HAVE_PTHREADS 1
   55      =2  #define HAVE_W32THREADS 0
   56      =2  #define HAVE_OS2THREADS 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 3   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 3   
 
   57      =2  #define HAVE_ALIGNED_STACK 0
   58      =2  #define HAVE_ALSA_ASOUNDLIB_H 0
@@ -190,7 +190,7 @@ line level    source
  116      =2  #define HAVE_MAKEINFO 1
  117      =2  #define HAVE_MALLOC_H 1
  118      =2  #define HAVE_MAPVIEWOFFILE 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 4   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 4   
 
  119      =2  #define HAVE_MEMALIGN 1
  120      =2  #define HAVE_MKSTEMP 1
@@ -254,7 +254,7 @@ line level    source
  178      =2  #define CONFIG_FFPLAY 0
  179      =2  #define CONFIG_FFPROBE 0
  180      =2  #define CONFIG_FFSERVER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 5   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 5   
 
  181      =2  #define CONFIG_FFMPEG 0
  182      =2  #define CONFIG_AC3DSP 1
@@ -318,7 +318,7 @@ line level    source
  240      =2  #define CONFIG_OPENAL 0
  241      =2  #define CONFIG_OPENSSL 0
  242      =2  #define CONFIG_PIC 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 6   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 6   
 
  243      =2  #define CONFIG_POSTPROC 0
  244      =2  #define CONFIG_RDFT 1
@@ -382,7 +382,7 @@ line level    source
  302      =2  #define CONFIG_BINK_DECODER 1
  303      =2  #define CONFIG_BMP_DECODER 1
  304      =2  #define CONFIG_BMV_VIDEO_DECODER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 7   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 7   
 
  305      =2  #define CONFIG_C93_DECODER 1
  306      =2  #define CONFIG_CAVS_DECODER 1
@@ -446,7 +446,7 @@ line level    source
  364      =2  #define CONFIG_MDEC_DECODER 1
  365      =2  #define CONFIG_MIMIC_DECODER 1
  366      =2  #define CONFIG_MJPEG_DECODER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 8   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 8   
 
  367      =2  #define CONFIG_MJPEGB_DECODER 1
  368      =2  #define CONFIG_MMVIDEO_DECODER 1
@@ -510,7 +510,7 @@ line level    source
  426      =2  #define CONFIG_TIFF_DECODER 1
  427      =2  #define CONFIG_TMV_DECODER 1
  428      =2  #define CONFIG_TRUEMOTION1_DECODER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 9   
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 9   
 
  429      =2  #define CONFIG_TRUEMOTION2_DECODER 1
  430      =2  #define CONFIG_TSCC_DECODER 1
@@ -574,7 +574,7 @@ line level    source
  488      =2  #define CONFIG_DSICINAUDIO_DECODER 1
  489      =2  #define CONFIG_EAC3_DECODER 1
  490      =2  #define CONFIG_FFWAVESYNTH_DECODER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 10  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 10  
 
  491      =2  #define CONFIG_FLAC_DECODER 1
  492      =2  #define CONFIG_G723_1_DECODER 1
@@ -638,7 +638,7 @@ line level    source
  550      =2  #define CONFIG_PCM_S24DAUD_DECODER 1
  551      =2  #define CONFIG_PCM_S24LE_DECODER 1
  552      =2  #define CONFIG_PCM_S32BE_DECODER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 11  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 11  
 
  553      =2  #define CONFIG_PCM_S32LE_DECODER 1
  554      =2  #define CONFIG_PCM_U8_DECODER 1
@@ -702,7 +702,7 @@ line level    source
  612      =2  #define CONFIG_LIBSTAGEFRIGHT_H264_DECODER 0
  613      =2  #define CONFIG_LIBUTVIDEO_DECODER 0
  614      =2  #define CONFIG_LIBVORBIS_DECODER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 12  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 12  
 
  615      =2  #define CONFIG_LIBVPX_DECODER 0
  616      =2  #define CONFIG_BINTEXT_DECODER 1
@@ -766,7 +766,7 @@ line level    source
  674      =2  #define CONFIG_ICO_DEMUXER 1
  675      =2  #define CONFIG_IDCIN_DEMUXER 1
  676      =2  #define CONFIG_IDF_DEMUXER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 13  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 13  
 
  677      =2  #define CONFIG_IFF_DEMUXER 1
  678      =2  #define CONFIG_IMAGE2_DEMUXER 1
@@ -830,7 +830,7 @@ line level    source
  736      =2  #define CONFIG_PCM_U16LE_DEMUXER 1
  737      =2  #define CONFIG_PCM_U8_DEMUXER 1
  738      =2  #define CONFIG_PMP_DEMUXER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 14  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 14  
 
  739      =2  #define CONFIG_PVA_DEMUXER 1
  740      =2  #define CONFIG_QCP_DEMUXER 1
@@ -894,7 +894,7 @@ line level    source
  798      =2  #define CONFIG_AYUV_ENCODER 0
  799      =2  #define CONFIG_BMP_ENCODER 0
  800      =2  #define CONFIG_CLJR_ENCODER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 15  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 15  
 
  801      =2  #define CONFIG_DNXHD_ENCODER 0
  802      =2  #define CONFIG_DPX_ENCODER 0
@@ -958,7 +958,7 @@ line level    source
  860      =2  #define CONFIG_AC3_ENCODER 0
  861      =2  #define CONFIG_AC3_FIXED_ENCODER 0
  862      =2  #define CONFIG_ALAC_ENCODER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 16  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 16  
 
  863      =2  #define CONFIG_DCA_ENCODER 0
  864      =2  #define CONFIG_EAC3_ENCODER 0
@@ -1022,7 +1022,7 @@ line level    source
  922      =2  #define CONFIG_LIBVORBIS_ENCODER 0
  923      =2  #define CONFIG_LIBVPX_ENCODER 0
  924      =2  #define CONFIG_LIBX264_ENCODER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 17  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 17  
 
  925      =2  #define CONFIG_LIBX264RGB_ENCODER 0
  926      =2  #define CONFIG_LIBXAVS_ENCODER 0
@@ -1086,7 +1086,7 @@ line level    source
  984      =2  #define CONFIG_SELECT_FILTER 1
  985      =2  #define CONFIG_SETDAR_FILTER 1
  986      =2  #define CONFIG_SETFIELD_FILTER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 18  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 18  
 
  987      =2  #define CONFIG_SETPTS_FILTER 1
  988      =2  #define CONFIG_SETSAR_FILTER 1
@@ -1150,7 +1150,7 @@ line level    source
 1046      =2  #define CONFIG_ADX_MUXER 0
 1047      =2  #define CONFIG_AIFF_MUXER 0
 1048      =2  #define CONFIG_AMR_MUXER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 19  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 19  
 
 1049      =2  #define CONFIG_ASF_MUXER 0
 1050      =2  #define CONFIG_ASS_MUXER 0
@@ -1214,7 +1214,7 @@ line level    source
 1108      =2  #define CONFIG_MXF_D10_MUXER 0
 1109      =2  #define CONFIG_NULL_MUXER 0
 1110      =2  #define CONFIG_NUT_MUXER 0
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 20  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 20  
 
 1111      =2  #define CONFIG_OGG_MUXER 0
 1112      =2  #define CONFIG_OMA_MUXER 0
@@ -1278,7 +1278,7 @@ line level    source
 1170      =2  #define CONFIG_DNXHD_PARSER 1
 1171      =2  #define CONFIG_DVBSUB_PARSER 1
 1172      =2  #define CONFIG_DVDSUB_PARSER 1
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 21  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 21  
 
 1173      =2  #define CONFIG_FLAC_PARSER 1
 1174      =2  #define CONFIG_GSM_PARSER 1
@@ -1342,7 +1342,7 @@ line level    source
   14      =2  sbit P45 = P4^5;       //ISPÏÂÔØÐè¹´Ñ¡"ALE½ÅÓÃ×÷P4.5¿Ú"
   15      =2  sbit P44 = P4^4;
   16      =2  sbit P43 = P4^3;
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 22  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 22  
 
   17      =2  sbit P42 = P4^2;
   18      =2  sbit P41 = P4^1;
@@ -1406,7 +1406,7 @@ line level    source
   76      =2  sbit P32 = P3^2;
   77      =2  sbit P33 = P3^3;
   78      =2  sbit P34 = P3^4;
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 23  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 23  
 
   79      =2  sbit P35 = P3^5;
   80      =2  sbit P36 = P3^6;
@@ -1470,7 +1470,7 @@ line level    source
  138      =2  sbit AC   = PSW^6;
  139      =2  sbit F0   = PSW^5;
  140      =2  sbit RS1  = PSW^4;
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 24  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 24  
 
  141      =2  sbit RS0  = PSW^3;
  142      =2  sbit OV   = PSW^2;
@@ -1534,7 +1534,7 @@ line level    source
  200      =2  sbit CEX2 = P1^5;
  201      =2  sbit CEX1 = P1^4;
  202      =2  sbit CEX0 = P1^3;
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 25  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 25  
 
  203      =2  sbit ECI  = P1^2;
  204      =2  */
@@ -1598,7 +1598,7 @@ line level    source
   31      =1                                                          //è€Œ  ä¸¤å®šä½å¯¹åº”ä¸€è„‰å†²ï¼Œæ˜¯æŒ‡EC11æ—‹è½¬
              -ç¼–ç å™¨æ¯è½¬åŠ¨ä¸¤æ ¼ï¼ŒAå’ŒBæ‰ä¼šè¾“å‡ºä¸€ä¸ªå®Œæ•´çš„æ–¹æ³¢ï¼Œåªè½¬åŠ¨ä¸€æ ¼åªè¾“å‡ºAå’ŒBçš„ä¸Šå‡æ²¿æˆ–ä¸‹é™æ²
              -¿
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 26  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 26  
 
   32      =1                                                          
   33      =1  static   int    EC11_KEY_COUNT = 0;                     //EC11æŒ‰é”®åŠ¨ä½œè®¡æ•°å™¨
@@ -1662,7 +1662,7 @@ line level    source
   78      =1  #endif
   79      =1   
   80      =1   
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 27  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 27  
 
   81      =1  //---->>>>----å‡½æ•°ä½¿ç”¨ç¤ºä¾‹----<<<<----//
   82      =1  /********
@@ -1726,7 +1726,7 @@ line level    source
    1      =2  #ifndef __STC89C5xRC_H__
  234      =2  
    5      =1  
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 28  
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 28  
 
    6      =1  sbit CS_0832 = P1^3;  //Ê¹ÄÜ¶Ë
    7      =1  sbit CLK_0832 = P3^5;//Ê±ÖÓ½Ó¿Ú
@@ -1757,226 +1757,272 @@ line level    source
   15          sbit Volt_Pwm = P1^6;
   16          #define Smg_IO P2
   17          //---------------±äÁ¿¶¨Òå---------------//
-  18          unsigned char Volt_Time =100; //ÖÜÆÚ1000us
-  19          unsigned int Volt_OutPut=500;//Ä¿±êµçÑ¹
-  20          unsigned char Volt_Chek; //¼ì²âµçÑ¹
-  21          
-  22          /***********************************************************
-  23          * Ãû    ³Æ£ºInitTimer0()
-  24          * ¹¦    ÄÜ£ºµçÑ¹¿ØÖÆ
-  25          * Èë¿Ú²ÎÊý£ºÎÞ
-  26          * ³ö¿Ú²ÎÊý£ºÎÞ
-  27          * Ëµ    Ã÷£º12M¾§Õñ£¬12·ÖÆµ£¬ËùÒÔ¼ÆÊýÆ÷Ã¿µÝÔöÒ»¸öÊý¾ÍÊÇ1Î¢Ãë£¬ÍêÈ«Âú×ã¶æ»ú¿ØÖÆµÄ¾«¶ÈÒªÇó
-  28                      ÒòÎª¶¨Ê±Æ÷ÊÇTH0£¬TL0¶¼ÒªÈ«²¿¼ÆÊýµ½0xFFºóÔÚ¼Æ1¸öÊý¾Í»á²úÉúÖÐ¶Ï£¬ËùÒÔÒªÏë²úÉú
-  29                      xºÁÃëµÄÖÐ¶Ï£¬ÄÇÃ´TH0£¬TL0¾ÍÓ¦¸Ã¸³Öµ£¨0xFFFF-x£©     ´ÓÕâ¸öÖµ¿ªÊ¼¼ÆÊý²úÉú¶¨Ê±ÖÐ¶Ï
-  30          /**********************************************************/
-  31          void InitTimer0(void) // 1us
-  32          {
-  33   1          
-  34   1          TMOD &= 0xF0; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
-  35   1          TMOD |= 0x01; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
-  36   1          TL0 = 0xE0;   //ÉèÖÃ¶¨Ê±³õÖµ
-  37   1          TH0 = 0xB1;   //ÉèÖÃ¶¨Ê±³õÖµ
-  38   1          TF0 = 0;      //Çå³ýTF0±êÖ¾
-  39   1          TR0 = 1;      //¶¨Ê±Æ÷0¿ªÊ¼¼ÆÊ±
-  40   1          ET0 = 1;      //¿ª¶¨Ê±Æ÷0ÖÐ¶Ï
-  41   1          EA = 1;       //¿ª×ÜÖÐ¶Ï
-  42   1      }
-  43          void Volt_Init() //¶æ»ú³õÊ¼»¯
-  44          {
-  45   1          InitTimer0();
-  46   1      }
-  47          
-  48          /***********************************************************
-  49          * Ãû    ³Æ£ºTimer0Value(uint16 pwm)
-  50          * ¹¦    ÄÜ£º¸ø¶¨Ê±Æ÷0¼ÆÊýÆ÷¸³Öµ²úÉú¶¨Ê±ÖÐ¶Ï
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 29  
+  18          unsigned int Volt_Time =100; //ÖÜÆÚ1000us
+  19          unsigned int Volt_OutPut=330;//Ä¿±êµçÑ¹
+  20          unsigned int Volt_Chek; //¼ì²âµçÑ¹
+  21          void Smg_Show(unsigned int Temp , unsigned int Temp1);
+  22          int output;
+  23          int chek;
+  24          
+  25          void Delay500us()               //@12.000MHz
+  26          {
+  27   1              unsigned char i;
+  28   1      
+  29   1              _nop_();
+  30   1              i = 247;
+  31   1              while (--i);
+  32   1      }
+  33          
+  34          
+  35          
+  36          /***********************************************************
+  37          * Ãû    ³Æ£ºInitTimer0()
+  38          * ¹¦    ÄÜ£ºµçÑ¹¿ØÖÆ
+  39          * Èë¿Ú²ÎÊý£ºÎÞ
+  40          * ³ö¿Ú²ÎÊý£ºÎÞ
+  41          * Ëµ    Ã÷£º12M¾§Õñ£¬12·ÖÆµ£¬ËùÒÔ¼ÆÊýÆ÷Ã¿µÝÔöÒ»¸öÊý¾ÍÊÇ1Î¢Ãë£¬ÍêÈ«Âú×ã¶æ»ú¿ØÖÆµÄ¾«¶ÈÒªÇó
+  42                      ÒòÎª¶¨Ê±Æ÷ÊÇTH0£¬TL0¶¼ÒªÈ«²¿¼ÆÊýµ½0xFFºóÔÚ¼Æ1¸öÊý¾Í»á²úÉúÖÐ¶Ï£¬ËùÒÔÒªÏë²úÉú
+  43                      xºÁÃëµÄÖÐ¶Ï£¬ÄÇÃ´TH0£¬TL0¾ÍÓ¦¸Ã¸³Öµ£¨0xFFFF-x£©     ´ÓÕâ¸öÖµ¿ªÊ¼¼ÆÊý²úÉú¶¨Ê±ÖÐ¶Ï
+  44          /**********************************************************/
+  45          void InitTimer0(void) // 1us
+  46          {
+  47   1          
+  48   1          TMOD &= 0xF0; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
+  49   1          TMOD |= 0x01; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
+  50   1          TL0 = 0xE0;   //ÉèÖÃ¶¨Ê±³õÖµ
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 29  
 
-  51          * Èë¿Ú²ÎÊý£ºpwm
-  52          * ³ö¿Ú²ÎÊý£ºÎÞ
-  53          * Ëµ    Ã÷£º12M¾§Õñ£¬12·ÖÆµ£¬ËùÒÔ¼ÆÊýÆ÷Ã¿µÝÔöÒ»¸öÊý¾ÍÊÇ1Î¢Ãë£¬ÍêÈ«Âú×ã¶æ»ú¿ØÖÆµÄ¾«¶ÈÒªÇó
-  54                      ÒòÎª¶¨Ê±Æ÷ÊÇTH0£¬TL0¶¼ÒªÈ«²¿¼ÆÊýµ½0xFFºóÔÚ¼Æ1¸öÊý¾Í»á²úÉúÖÐ¶Ï£¬ËùÒÔÒªÏë²úÉú
-  55                      pwmºÁÃëµÄÖÐ¶Ï£¬ÄÇÃ´TH0£¬TL0¾ÍÓ¦¸Ã¸³Öµ£¨0xFFFF-pwm£© ´ÓÕâ¸öÖµ¿ªÊ¼¼ÆÊý²úÉú¶¨Ê±ÖÐ¶Ï
-  56          /**********************************************************/
-  57          void Timer0Value(unsigned int pwm)
+  51   1          TH0 = 0xB1;   //ÉèÖÃ¶¨Ê±³õÖµ
+  52   1          TF0 = 0;      //Çå³ýTF0±êÖ¾
+  53   1          TR0 = 1;      //¶¨Ê±Æ÷0¿ªÊ¼¼ÆÊ±
+  54   1          ET0 = 1;      //¿ª¶¨Ê±Æ÷0ÖÐ¶Ï
+  55   1          EA = 1;       //¿ª×ÜÖÐ¶Ï
+  56   1      }
+  57          void Volt_Init() //¶æ»ú³õÊ¼»¯
   58          {
-  59   1          unsigned int value;
-  60   1          value = 0xffff - pwm;
-  61   1          TR0 = 0;
-  62   1          TL0 = value;      // 16Î»Êý¾Ý¸ø8Î»Êý¾Ý¸³ÖµÄ¬ÈÏ½«16Î»Êý¾ÝµÄµÍ°ËÎ»Ö±½Ó¸³¸ø°ËÎ»Êý¾Ý
-  63   1          TH0 = value >> 8; //½«16Î»Êý¾ÝÓÒÒÆ8Î»£¬Ò²¾ÍÊÇ½«¸ß8Î»ÒÆµ½µÍ°ËÎ»£¬ÔÙ¸³Öµ¸ø8Î»Êý¾Ý
-  64   1          TR0 = 1;
-  65   1      }
-  66          
-  67          /***********************************************************
-  68          * Ãû    ³Æ£º Timer0_isr() interrupt 1 using 1
-  69          * ¹¦    ÄÜ£º Ê±ÖÓ0ÖÐ¶Ï´¦Àí
-  70          * Èë¿Ú²ÎÊý£º ÎÞ
-  71          * ³ö¿Ú²ÎÊý£º ÎÞ
-  72          * Ëµ    Ã÷£º
-  73          /**********************************************************/
-  74          void Timer0_isr(void) interrupt 1 using 1
-  75          {
-  76   1          static unsigned char i = 1; //¾²Ì¬±äÁ¿£ºÃ¿´Îµ÷ÓÃº¯ÊýÊ±±£³ÖÉÏÒ»´ÎËù¸³µÄÖµ£¬
-  77   1          //¸úÈ«¾Ö±äÁ¿ÀàËÆ£¬²»Í¬ÊÇËüÖ»ÄÜÓÃÓÚ´Ëº¯ÊýÄÚ²¿
-  78   1          switch (i)
-  79   1          {
-  80   2          case 1:
-  81   2              Volt_Pwm = 0; // PWM¿ØÖÆ½Å¸ßµçÆ½
-  82   2              //¸ø¶¨Ê±Æ÷0¸³Öµ£¬¼ÆÊýPwm0Duty¸öÂö³åºó²úÉúÖÐ¶Ï£¬ÏÂ´ÎÖÐ¶Ï»á½øÈëÏÂÒ»¸öcaseÓï¾ä
-  83   2              Timer0Value(Volt_OutPut);
-  84   2              break;
-  85   2          case 2:
-  86   2              Volt_Pwm = 1; // PWM¿ØÖÆ½ÅµÍµçÆ½
-  87   2              //¸ßÂö³å½áÊøºóÊ£ÏÂµÄÊ±¼ä(20000-Pwm0Duty)È«ÊÇµÍµçÆ½ÁË£¬Pwm0Duty + (20000-Pwm0Duty) = 20000¸öÂö³åÕýº
+  59   1          InitTimer0();
+  60   1      }
+  61          
+  62          /***********************************************************
+  63          * Ãû    ³Æ£ºTimer0Value(uint16 pwm)
+  64          * ¹¦    ÄÜ£º¸ø¶¨Ê±Æ÷0¼ÆÊýÆ÷¸³Öµ²úÉú¶¨Ê±ÖÐ¶Ï
+  65          * Èë¿Ú²ÎÊý£ºpwm
+  66          * ³ö¿Ú²ÎÊý£ºÎÞ
+  67          * Ëµ    Ã÷£º12M¾§Õñ£¬12·ÖÆµ£¬ËùÒÔ¼ÆÊýÆ÷Ã¿µÝÔöÒ»¸öÊý¾ÍÊÇ1Î¢Ãë£¬ÍêÈ«Âú×ã¶æ»ú¿ØÖÆµÄ¾«¶ÈÒªÇó
+  68                      ÒòÎª¶¨Ê±Æ÷ÊÇTH0£¬TL0¶¼ÒªÈ«²¿¼ÆÊýµ½0xFFºóÔÚ¼Æ1¸öÊý¾Í»á²úÉúÖÐ¶Ï£¬ËùÒÔÒªÏë²úÉú
+  69                      pwmºÁÃëµÄÖÐ¶Ï£¬ÄÇÃ´TH0£¬TL0¾ÍÓ¦¸Ã¸³Öµ£¨0xFFFF-pwm£© ´ÓÕâ¸öÖµ¿ªÊ¼¼ÆÊý²úÉú¶¨Ê±ÖÐ¶Ï
+  70          /**********************************************************/
+  71          void Timer0Value(unsigned int pwm)
+  72          {
+  73   1          unsigned int value;
+  74   1          value = 0xffff - pwm;
+  75   1          TR0 = 0;
+  76   1          TL0 = value;      // 16Î»Êý¾Ý¸ø8Î»Êý¾Ý¸³ÖµÄ¬ÈÏ½«16Î»Êý¾ÝµÄµÍ°ËÎ»Ö±½Ó¸³¸ø°ËÎ»Êý¾Ý
+  77   1          TH0 = value >> 8; //½«16Î»Êý¾ÝÓÒÒÆ8Î»£¬Ò²¾ÍÊÇ½«¸ß8Î»ÒÆµ½µÍ°ËÎ»£¬ÔÙ¸³Öµ¸ø8Î»Êý¾Ý
+  78   1          TR0 = 1;
+  79   1      }
+  80          
+  81          /***********************************************************
+  82          * Ãû    ³Æ£º Timer0_isr() interrupt 1 using 1
+  83          * ¹¦    ÄÜ£º Ê±ÖÓ0ÖÐ¶Ï´¦Àí
+  84          * Èë¿Ú²ÎÊý£º ÎÞ
+  85          * ³ö¿Ú²ÎÊý£º ÎÞ
+  86          * Ëµ    Ã÷£º
+  87          /**********************************************************/
+  88          void Timer0_isr(void) interrupt 1 using 1
+  89          {
+  90   1          static unsigned char i = 1; //¾²Ì¬±äÁ¿£ºÃ¿´Îµ÷ÓÃº¯ÊýÊ±±£³ÖÉÏÒ»´ÎËù¸³µÄÖµ£¬
+  91   1          //¸úÈ«¾Ö±äÁ¿ÀàËÆ£¬²»Í¬ÊÇËüÖ»ÄÜÓÃÓÚ´Ëº¯ÊýÄÚ²¿
+  92   1          switch (i)
+  93   1          {
+  94   2          case 1:
+  95   2              Volt_Pwm = 0; // PWM¿ØÖÆ½Å¸ßµçÆ½
+  96   2              //¸ø¶¨Ê±Æ÷0¸³Öµ£¬¼ÆÊýPwm0Duty¸öÂö³åºó²úÉúÖÐ¶Ï£¬ÏÂ´ÎÖÐ¶Ï»á½øÈëÏÂÒ»¸öcaseÓï¾ä
+  97   2              Timer0Value(Volt_Time);
+  98   2              break;
+  99   2          case 2:
+ 100   2              Volt_Pwm = 1; // PWM¿ØÖÆ½ÅµÍµçÆ½
+ 101   2              //¸ßÂö³å½áÊøºóÊ£ÏÂµÄÊ±¼ä(20000-Pwm0Duty)È«ÊÇµÍµçÆ½ÁË£¬Pwm0Duty + (20000-Pwm0Duty) = 20000¸öÂö³åÕýº
              -ÃÎªÒ»¸öÖÜÆÚ20ºÁÃë
-  88   2              Timer0Value(1200-Volt_OutPut);
-  89   2              i = 0;
-  90   2              break;
-  91   2          }
-  92   1          i++;
-  93   1      }
-  94          
-  95          //±àÂëÆ÷¶¨Ê±Æ÷²¿·Ö
-  96          
-  97          /***********************************************************
-  98          * Ãû    ³Æ£ºTimer1Init
-  99          * ¹¦    ÄÜ£º±àÂëÆ÷³õÊ¼»¯
- 100          * Èë¿Ú²ÎÊý£ºÎÞ
- 101          * ³ö¿Ú²ÎÊý£ºÎÞ
- 102          * Ëµ    Ã÷£º2msÒ»ÖÜÆÚ
- 103          /**********************************************************/
- 104          void Timer1Init(void) // 4ºÁÃë@12.000MHz
- 105          {
- 106   1          //TMOD &= 0x0F; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
- 107   1          //TMOD |= 0x10; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
- 108   1          AUXR &= 0xBF;               //¶¨Ê±Æ÷Ê±ÖÓ12TÄ£Ê½
- 109   1              TMOD &= 0x0F;           //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
- 110   1              TL1 = 0x24;             //ÉèÖÃ¶¨Ê±³õÊ¼Öµ
- 111   1              TH1 = 0xFA;             //ÉèÖÃ¶¨Ê±³õÊ¼Öµ
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 30  
+ 102   2              Timer0Value(1200-Volt_Time);
+ 103   2              i = 0;
+ 104   2              break;
+ 105   2          }
+ 106   1          i++;
+ 107   1      }
+ 108          
+ 109          //±àÂëÆ÷¶¨Ê±Æ÷²¿·Ö
+ 110          
+ 111          /***********************************************************
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 30  
 
- 112   1          TF1 = 0;      //Çå³ýTF1±êÖ¾
- 113   1          TR1 = 1;      //¶¨Ê±Æ÷1¿ªÊ¼¼ÆÊ±
- 114   1          ET1 = 1;      //¿ª¶¨Ê±Æ÷1ÖÐ¶Ï
- 115   1          EA = 1;       //¿ª×ÜÖÐ¶Ï
- 116   1      }
- 117          void EC11_Init(void)//EC11±àÂëÆ÷³õÊ¼»¯
- 118          {
- 119   1          Timer1Init();
- 120   1          Encoder_EC11_Init(0);
- 121   1      
- 122   1      }
- 123          /********************************************************
- 124          * Ãû    ³Æ£º Timer1_isr() interrupt 3 using 3
- 125          * ¹¦    ÄÜ£º Ê±ÖÓ0ÖÐ¶Ï´¦Àí
- 126          * Èë¿Ú²ÎÊý£º ÎÞ
- 127          * ³ö¿Ú²ÎÊý£º ÎÞ
- 128          * Ëµ    Ã÷£º ÎÞ
- 129          /**********************************************************/
- 130          
- 131          void Timer1_isr(void) interrupt 3 using 3
+ 112          * Ãû    ³Æ£ºTimer1Init
+ 113          * ¹¦    ÄÜ£º±àÂëÆ÷³õÊ¼»¯
+ 114          * Èë¿Ú²ÎÊý£ºÎÞ
+ 115          * ³ö¿Ú²ÎÊý£ºÎÞ
+ 116          * Ëµ    Ã÷£º2msÒ»ÖÜÆÚ
+ 117          /**********************************************************/
+ 118          void Timer1Init(void) // 4ºÁÃë@12.000MHz
+ 119          {
+ 120   1          //TMOD &= 0x0F; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
+ 121   1          //TMOD |= 0x10; //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
+ 122   1          AUXR &= 0xBF;               //¶¨Ê±Æ÷Ê±ÖÓ12TÄ£Ê½
+ 123   1              TMOD &= 0x0F;           //ÉèÖÃ¶¨Ê±Æ÷Ä£Ê½
+ 124   1              TL1 = 0x24;             //ÉèÖÃ¶¨Ê±³õÊ¼Öµ
+ 125   1              TH1 = 0xFA;             //ÉèÖÃ¶¨Ê±³õÊ¼Öµ
+ 126   1          TF1 = 0;      //Çå³ýTF1±êÖ¾
+ 127   1          TR1 = 1;      //¶¨Ê±Æ÷1¿ªÊ¼¼ÆÊ±
+ 128   1          ET1 = 1;      //¿ª¶¨Ê±Æ÷1ÖÐ¶Ï
+ 129   1          EA = 1;       //¿ª×ÜÖÐ¶Ï
+ 130   1      }
+ 131          void EC11_Init(void)//EC11±àÂëÆ÷³õÊ¼»¯
  132          {
- 133   1          Encoder_EC11_Analyze(Encoder_EC11_Scan());
- 134   1      }
- 135          void Delay500us()               //@11.0592MHz
- 136          {
- 137   1              unsigned char i, j;
- 138   1      
- 139   1              _nop_();
- 140   1              _nop_();
- 141   1              i = 6;
- 142   1              j = 93;
- 143   1              do
- 144   1              {
- 145   2                      while (--j);
- 146   2              } while (--i);
- 147   1      }
- 148          
+ 133   1          Timer1Init();
+ 134   1          Encoder_EC11_Init(0);
+ 135   1      
+ 136   1      }
+ 137          /********************************************************
+ 138          * Ãû    ³Æ£º Timer1_isr() interrupt 3 using 3
+ 139          * ¹¦    ÄÜ£º Ê±ÖÓ0ÖÐ¶Ï´¦Àí
+ 140          * Èë¿Ú²ÎÊý£º ÎÞ
+ 141          * ³ö¿Ú²ÎÊý£º ÎÞ
+ 142          * Ëµ    Ã÷£º ÎÞ
+ 143          /**********************************************************/
+ 144          
+ 145          void Timer1_isr(void) interrupt 3 using 3
+ 146          {
+ 147   1          Encoder_EC11_Analyze(Encoder_EC11_Scan());
+ 148   1      }
  149          
- 150          
- 151          
- 152          sbit A0 = P4^0;
- 153          sbit A1 = P4^1;
- 154          sbit A2 = P4^2;
- 155          void Smg_Show(unsigned int Temp , unsigned int Temp1)
- 156          {
- 157   1      
- 158   1          A0 = 0;
- 159   1          A1=0;
- 160   1          A2=0;
- 161   1          Smg_IO=smg_ca[(Temp/1000)%10];Delay500us();
- 162   1          Smg_IO=0xff;
- 163   1      
- 164   1          A0=1;
- 165   1          A1=0;
- 166   1          A2=0;   
- 167   1          Smg_IO=smgdot_ca[(Temp/100)%10];Delay500us();
- 168   1          Smg_IO=0xff;
- 169   1      
- 170   1          A0=0;
- 171   1          A1=1;
- 172   1          A2=0; 
- 173   1          Smg_IO=smg_ca[(Temp/10)%10];Delay500us();
-C51 COMPILER V9.54   MAIN                                                                  10/22/2022 22:51:17 PAGE 31  
+ 150          void Timer2Init(void)           //100Î¢Ãë@12.000MHz
+ 151          {
+ 152   1              T2MOD = 0;     //³õÊ¼»¯Ä£Ê½¼Ä´æÆ÷
+ 153   1          T2CON = 0;     //³õÊ¼»¯¿ØÖÆ¼Ä´æÆ÷
+ 154   1          TL2 = 0x9C;         //ÉèÖÃ¶¨Ê±³õÊ¼Öµ
+ 155   1              TH2 = 0xFF;             //ÉèÖÃ¶¨Ê±³õÊ¼Öµ
+ 156   1              RCAP2L = 0x9C;          //ÉèÖÃ¶¨Ê±ÖØÔØÖµ
+ 157   1              RCAP2H = 0xFF;          //ÉèÖÃ¶¨Ê±ÖØÔØÖµ
+ 158   1          TR2 = 1;       //¶¨Ê±Æ÷2¿ªÊ¼¼ÆÊ±
+ 159   1          PT2 = 0;
+ 160   1          ET2 = 1;
+ 161   1          EA = 1;
+ 162   1      }
+ 163          void Timer2sir() interrupt 5
+ 164          {
+ 165   1          TR2=0;
+ 166   1          RCAP2L = 0x9C;              //ÉèÖÃ¶¨Ê±ÖØÔØÖµ
+ 167   1              RCAP2H = 0xFF;          //ÉèÖÃ¶¨Ê±ÖØÔØÖµ
+ 168   1          TR2=1;
+ 169   1          
+ 170   1          
+ 171   1      }
+ 172          
+ 173          
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 31  
 
- 174   1          Smg_IO=0xff;
- 175   1      
- 176   1          A0=1;
- 177   1          A1=1;
- 178   1          A2=0;
- 179   1          Smg_IO=smg_ca[(Temp)%10];Delay500us();
- 180   1          Smg_IO=0xff;
- 181   1      
- 182   1      
- 183   1      //¼ì²âµçÑ¹ÏÔÊ¾
- 184   1          A0=0;
- 185   1          A1=0;
- 186   1          A2=1; 
- 187   1          Smg_IO=smg_ca[(Temp1/1000)%10];Delay500us();
- 188   1          Smg_IO=0xff;
- 189   1              
- 190   1          A0=1;
- 191   1          A1=0;
- 192   1          A2=1;   
- 193   1          Smg_IO=smgdot_ca[(Temp1/100)%10];Delay500us();
- 194   1          Smg_IO=0xff;
- 195   1      
- 196   1          A0=0;
- 197   1          A1=1;
- 198   1          A2=1; 
- 199   1          Smg_IO=smg_ca[(Temp1/10)%10];Delay500us();
- 200   1          Smg_IO=0xff;
- 201   1      
- 202   1          A0=1;
- 203   1          A1=1;
- 204   1          A2=1;
- 205   1          Smg_IO=smg_ca[(Temp1)%10];Delay500us();
- 206   1          Smg_IO=0xff;
- 207   1      
- 208   1      }
- 209          
- 210          void main()
- 211          {
+ 174          
+ 175          sbit A0 = P4^0;
+ 176          sbit A1 = P4^1;
+ 177          sbit A2 = P4^2;
+ 178          void Smg_Show(unsigned int Temp , unsigned int Temp1)
+ 179          {
+ 180   1      
+ 181   1          A0 = 0;
+ 182   1          A1=0;
+ 183   1          A2=0;
+ 184   1          Smg_IO=smg_ca[(Temp/1000)%10];Delay500us();
+ 185   1          Smg_IO=0xff;
+ 186   1      
+ 187   1          A0=1;
+ 188   1          A1=0;
+ 189   1          A2=0;   
+ 190   1          Smg_IO=smgdot_ca[(Temp/100)%10];Delay500us();
+ 191   1          Smg_IO=0xff;
+ 192   1      
+ 193   1          A0=0;
+ 194   1          A1=1;
+ 195   1          A2=0; 
+ 196   1          Smg_IO=smg_ca[(Temp/10)%10];Delay500us();
+ 197   1          Smg_IO=0xff;
+ 198   1      
+ 199   1          A0=1;
+ 200   1          A1=1;
+ 201   1          A2=0;
+ 202   1          Smg_IO=smg_ca[(Temp)%10];Delay500us();
+ 203   1          Smg_IO=0xff;
+ 204   1      
+ 205   1      
+ 206   1      //¼ì²âµçÑ¹ÏÔÊ¾
+ 207   1          A0=0;
+ 208   1          A1=0;
+ 209   1          A2=1; 
+ 210   1          Smg_IO=smg_ca[(Temp1/1000)%10];Delay500us();
+ 211   1          Smg_IO=0xff;
  212   1              
- 213   1          Volt_Init();
- 214   1          EC11_Init();   
- 215   1          while (1)
- 216   1          {
- 217   2          Smg_Show(Volt_OutPut,Volt_Chek/0.2125);
- 218   2              Volt_Chek=read0832();   
- 219   2      
- 220   2          }
- 221   1          
- 222   1      }
+ 213   1          A0=1;
+ 214   1          A1=0;
+ 215   1          A2=1;   
+ 216   1          Smg_IO=smgdot_ca[(Temp1/100)%10];Delay500us();
+ 217   1          Smg_IO=0xff;
+ 218   1      
+ 219   1          A0=0;
+ 220   1          A1=1;
+ 221   1          A2=1; 
+ 222   1          Smg_IO=smg_ca[(Temp1/10)%10];Delay500us();
+ 223   1          Smg_IO=0xff;
+ 224   1      
+ 225   1          A0=1;
+ 226   1          A1=1;
+ 227   1          A2=1;
+ 228   1          Smg_IO=smg_ca[(Temp1)%10];Delay500us();
+ 229   1          Smg_IO=0xff;
+ 230   1      
+ 231   1      }
+ 232          
+ 233          void main()
+ 234          {
+ 235   1              
+C51 COMPILER V9.54   MAIN                                                                  10/23/2022 03:00:37 PAGE 32  
+
+ 236   1          Volt_Init();
+ 237   1          EC11_Init(); 
+ 238   1          //Timer2Init();  
+ 239   1          while (1)
+ 240   1          {
+ 241   2          Smg_Show(output,chek);
+ 242   2          Volt_Chek=read0832();
+ 243   2          output=Volt_OutPut;
+ 244   2          chek=(Volt_Chek*100/51);
+ 245   2          if((output)>chek)//output>chek
+ 246   2          {
+ 247   3              if(((chek-Volt_OutPut)<-2)||((chek-Volt_OutPut)>2))
+ 248   3              {
+ 249   4                  Volt_Time++;
+ 250   4                  if(Volt_Time<=10)
+ 251   4                  {Volt_Time=10;}
+ 252   4              } 
+ 253   3              
+ 254   3          }
+ 255   2          else
+ 256   2          {
+ 257   3              if(((chek-Volt_OutPut)<-2)||((chek-Volt_OutPut)>2))
+ 258   3              {
+ 259   4                  Volt_Time--;
+ 260   4                  if(Volt_Time>=1200)
+ 261   4                  {Volt_Time=1200;}
+ 262   4              } 
+ 263   3          }
+ 264   2          }
+ 265   1          
+ 266   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    419    ----
+   CODE SIZE        =    589    ----
    CONSTANT SIZE    =     40    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     16       2
+   DATA SIZE        =     22       2
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

@@ -253,7 +253,7 @@ char Encoder_EC11_Analyze(char EC11_Value)
  
             if(FLAG_EC11_KEY_LongClick == 1)        //检测到长按按键松开
                 FLAG_EC11_KEY_LongClick = 0;
-                
+                //Volt_OutPut=500;
         }
  
     }

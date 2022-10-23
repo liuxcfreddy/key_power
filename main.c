@@ -15,9 +15,23 @@ code unsigned char smgdot_ca[10] = {//带点
 sbit Volt_Pwm = P1^6;
 #define Smg_IO P2
 //---------------变量定义---------------//
-unsigned char Volt_Time =100; //周期1000us
-unsigned int Volt_OutPut=500;//目标电压
-unsigned char Volt_Chek; //检测电压
+unsigned int Volt_Time =100; //周期1000us
+unsigned int Volt_OutPut=330;//目标电压
+unsigned int Volt_Chek; //检测电压
+void Smg_Show(unsigned int Temp , unsigned int Temp1);
+int output;
+int chek;
+
+void Delay500us()		//@12.000MHz
+{
+	unsigned char i;
+
+	_nop_();
+	i = 247;
+	while (--i);
+}
+
+
 
 /***********************************************************
 * 名    称：InitTimer0()
@@ -80,12 +94,12 @@ void Timer0_isr(void) interrupt 1 using 1
     case 1:
         Volt_Pwm = 0; // PWM控制脚高电平
         //给定时器0赋值，计数Pwm0Duty个脉冲后产生中断，下次中断会进入下一个case语句
-        Timer0Value(Volt_OutPut);
+        Timer0Value(Volt_Time);
         break;
     case 2:
         Volt_Pwm = 1; // PWM控制脚低电平
         //高脉冲结束后剩下的时间(20000-Pwm0Duty)全是低电平了，Pwm0Duty + (20000-Pwm0Duty) = 20000个脉冲正好为一个周期20毫秒
-        Timer0Value(1200-Volt_OutPut);
+        Timer0Value(1200-Volt_Time);
         i = 0;
         break;
     }
@@ -132,20 +146,29 @@ void Timer1_isr(void) interrupt 3 using 3
 {
     Encoder_EC11_Analyze(Encoder_EC11_Scan());
 }
-void Delay500us()		//@11.0592MHz
+
+void Timer2Init(void)		//100微秒@12.000MHz
 {
-	unsigned char i, j;
-
-	_nop_();
-	_nop_();
-	i = 6;
-	j = 93;
-	do
-	{
-		while (--j);
-	} while (--i);
+	T2MOD = 0;     //初始化模式寄存器
+    T2CON = 0;     //初始化控制寄存器
+    TL2 = 0x9C;		//设置定时初始值
+	TH2 = 0xFF;		//设置定时初始值
+	RCAP2L = 0x9C;		//设置定时重载值
+	RCAP2H = 0xFF;		//设置定时重载值
+    TR2 = 1;       //定时器2开始计时
+    PT2 = 0;
+    ET2 = 1;
+    EA = 1;
 }
-
+void Timer2sir() interrupt 5
+{
+    TR2=0;
+    RCAP2L = 0x9C;		//设置定时重载值
+	RCAP2H = 0xFF;		//设置定时重载值
+    TR2=1;
+    
+    
+}
 
 
 
@@ -211,12 +234,33 @@ void main()
 {
 	
     Volt_Init();
-    EC11_Init();   
+    EC11_Init(); 
+    //Timer2Init();  
     while (1)
     {
-    Smg_Show(Volt_OutPut,Volt_Chek/0.2125);
-	Volt_Chek=read0832();	
-
+    Smg_Show(output,chek);
+    Volt_Chek=read0832();
+    output=Volt_OutPut;
+    chek=(Volt_Chek*100/51);
+    if((output)>chek)//output>chek
+    {
+        if(((chek-Volt_OutPut)<-2)||((chek-Volt_OutPut)>2))
+        {
+            Volt_Time++;
+            if(Volt_Time<=10)
+            {Volt_Time=10;}
+        } 
+        
+    }
+    else
+    {
+        if(((chek-Volt_OutPut)<-2)||((chek-Volt_OutPut)>2))
+        {
+            Volt_Time--;
+            if(Volt_Time>=1200)
+            {Volt_Time=1200;}
+        } 
+    }
     }
     
 }
