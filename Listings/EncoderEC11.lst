@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 1   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE ENCODEREC11
@@ -62,7 +62,7 @@ line level    source
   26      =2  #define ARCH_PPC64 0
   27      =2  #define ARCH_S390 0
   28      =2  #define ARCH_SH4 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 2   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 2   
 
   29      =2  #define ARCH_SPARC 0
   30      =2  #define ARCH_SPARC64 0
@@ -126,7 +126,7 @@ line level    source
   88      =2  #define HAVE_GETHRTIME 0
   89      =2  #define HAVE_GETPROCESSAFFINITYMASK 0
   90      =2  #define HAVE_GETPROCESSMEMORYINFO 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 3   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 3   
 
   91      =2  #define HAVE_GETPROCESSTIMES 0
   92      =2  #define HAVE_GETRUSAGE 1
@@ -190,7 +190,7 @@ line level    source
  150      =2  #define HAVE_SYSCTL 0
  151      =2  #define HAVE_SYS_MMAN_H 1
  152      =2  #define HAVE_SYS_PARAM_H 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 4   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 4   
 
  153      =2  #define HAVE_SYS_RESOURCE_H 1
  154      =2  #define HAVE_SYS_SELECT_H 1
@@ -254,7 +254,7 @@ line level    source
  212      =2  #define CONFIG_LIBMODPLUG 0
  213      =2  #define CONFIG_LIBMP3LAME 0
  214      =2  #define CONFIG_LIBNUT 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 5   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 5   
 
  215      =2  #define CONFIG_LIBOPENCORE_AMRNB 0
  216      =2  #define CONFIG_LIBOPENCORE_AMRWB 0
@@ -318,7 +318,7 @@ line level    source
  274      =2  #define CONFIG_LPC 0
  275      =2  #define CONFIG_AAC_ADTSTOASC_BSF 0
  276      =2  #define CONFIG_CHOMP_BSF 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 6   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 6   
 
  277      =2  #define CONFIG_DUMP_EXTRADATA_BSF 0
  278      =2  #define CONFIG_H264_MP4TOANNEXB_BSF 0
@@ -382,7 +382,7 @@ line level    source
  336      =2  #define CONFIG_FLIC_DECODER 1
  337      =2  #define CONFIG_FLV_DECODER 1
  338      =2  #define CONFIG_FOURXM_DECODER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 7   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 7   
 
  339      =2  #define CONFIG_FRAPS_DECODER 1
  340      =2  #define CONFIG_FRWU_DECODER 1
@@ -446,7 +446,7 @@ line level    source
  398      =2  #define CONFIG_PRORES_LGPL_DECODER 1
  399      =2  #define CONFIG_PTX_DECODER 1
  400      =2  #define CONFIG_QDRAW_DECODER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 8   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 8   
 
  401      =2  #define CONFIG_QPEG_DECODER 1
  402      =2  #define CONFIG_QTRLE_DECODER 1
@@ -510,7 +510,7 @@ line level    source
  460      =2  #define CONFIG_WMV3IMAGE_DECODER 1
  461      =2  #define CONFIG_WNV1_DECODER 1
  462      =2  #define CONFIG_XAN_WC3_DECODER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 9   
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 9   
 
  463      =2  #define CONFIG_XAN_WC4_DECODER 1
  464      =2  #define CONFIG_XBM_DECODER 1
@@ -574,7 +574,7 @@ line level    source
  522      =2  #define CONFIG_TRUEHD_DECODER 1
  523      =2  #define CONFIG_TRUESPEECH_DECODER 1
  524      =2  #define CONFIG_TTA_DECODER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 10  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 10  
 
  525      =2  #define CONFIG_TWINVQ_DECODER 1
  526      =2  #define CONFIG_VMDAUDIO_DECODER 1
@@ -638,7 +638,7 @@ line level    source
  584      =2  #define CONFIG_ADPCM_IMA_QT_DECODER 1
  585      =2  #define CONFIG_ADPCM_IMA_SMJPEG_DECODER 1
  586      =2  #define CONFIG_ADPCM_IMA_WAV_DECODER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 11  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 11  
 
  587      =2  #define CONFIG_ADPCM_IMA_WS_DECODER 1
  588      =2  #define CONFIG_ADPCM_MS_DECODER 1
@@ -702,7 +702,7 @@ line level    source
  646      =2  #define CONFIG_CDXL_DEMUXER 1
  647      =2  #define CONFIG_DAUD_DEMUXER 1
  648      =2  #define CONFIG_DFA_DEMUXER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 12  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 12  
 
  649      =2  #define CONFIG_DIRAC_DEMUXER 1
  650      =2  #define CONFIG_DNXHD_DEMUXER 1
@@ -766,7 +766,7 @@ line level    source
  708      =2  #define CONFIG_MTV_DEMUXER 1
  709      =2  #define CONFIG_MVI_DEMUXER 1
  710      =2  #define CONFIG_MXF_DEMUXER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 13  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 13  
 
  711      =2  #define CONFIG_MXG_DEMUXER 1
  712      =2  #define CONFIG_NC_DEMUXER 1
@@ -830,7 +830,7 @@ line level    source
  770      =2  #define CONFIG_TTY_DEMUXER 1
  771      =2  #define CONFIG_VC1_DEMUXER 1
  772      =2  #define CONFIG_VC1T_DEMUXER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 14  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 14  
 
  773      =2  #define CONFIG_VMD_DEMUXER 1
  774      =2  #define CONFIG_VOC_DEMUXER 1
@@ -894,7 +894,7 @@ line level    source
  832      =2  #define CONFIG_PRORES_ANATOLIY_ENCODER 0
  833      =2  #define CONFIG_PRORES_KOSTYA_ENCODER 0
  834      =2  #define CONFIG_QTRLE_ENCODER 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 15  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 15  
 
  835      =2  #define CONFIG_R10K_ENCODER 0
  836      =2  #define CONFIG_R210_ENCODER 0
@@ -958,7 +958,7 @@ line level    source
  894      =2  #define CONFIG_PCM_U32BE_ENCODER 0
  895      =2  #define CONFIG_PCM_U32LE_ENCODER 0
  896      =2  #define CONFIG_ROQ_DPCM_ENCODER 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 16  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 16  
 
  897      =2  #define CONFIG_ADPCM_ADX_ENCODER 0
  898      =2  #define CONFIG_ADPCM_G722_ENCODER 0
@@ -1022,7 +1022,7 @@ line level    source
  956      =2  #define CONFIG_CROP_FILTER 1
  957      =2  #define CONFIG_CROPDETECT_FILTER 1
  958      =2  #define CONFIG_DELOGO_FILTER 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 17  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 17  
 
  959      =2  #define CONFIG_DESHAKE_FILTER 1
  960      =2  #define CONFIG_DRAWBOX_FILTER 1
@@ -1086,7 +1086,7 @@ line level    source
 1018      =2  #define CONFIG_MPEG1_VDPAU_HWACCEL 0
 1019      =2  #define CONFIG_MPEG2_DXVA2_HWACCEL 0
 1020      =2  #define CONFIG_MPEG2_VAAPI_HWACCEL 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 18  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 18  
 
 1021      =2  #define CONFIG_MPEG2_VDPAU_HWACCEL 0
 1022      =2  #define CONFIG_MPEG4_VAAPI_HWACCEL 0
@@ -1150,7 +1150,7 @@ line level    source
 1080      =2  #define CONFIG_IMAGE2PIPE_MUXER 0
 1081      =2  #define CONFIG_IPOD_MUXER 0
 1082      =2  #define CONFIG_ISMV_MUXER 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 19  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 19  
 
 1083      =2  #define CONFIG_IVF_MUXER 0
 1084      =2  #define CONFIG_JACOSUB_MUXER 0
@@ -1214,7 +1214,7 @@ line level    source
 1142      =2  #define CONFIG_SMJPEG_MUXER 0
 1143      =2  #define CONFIG_SOX_MUXER 0
 1144      =2  #define CONFIG_SPDIF_MUXER 0
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 20  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 20  
 
 1145      =2  #define CONFIG_SRT_MUXER 0
 1146      =2  #define CONFIG_SWF_MUXER 0
@@ -1278,7 +1278,7 @@ line level    source
 1204      =2  #define CONFIG_MD5_PROTOCOL 1
 1205      =2  #define CONFIG_PIPE_PROTOCOL 1
 1206      =2  #define CONFIG_RTMP_PROTOCOL 1
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 21  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 21  
 
 1207      =2  #define CONFIG_RTP_PROTOCOL 1
 1208      =2  #define CONFIG_SCTP_PROTOCOL 0
@@ -1342,7 +1342,7 @@ line level    source
   48      =2  sbit P01 = P0^1;
   49      =2  sbit P02 = P0^2;
   50      =2  sbit P03 = P0^3;
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 22  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 22  
 
   51      =2  sbit P04 = P0^4;
   52      =2  sbit P05 = P0^5;
@@ -1406,7 +1406,7 @@ line level    source
  110      =2  sfr TL2    = 0xCC;
  111      =2  sfr TH2    = 0xCD;
  112      =2  
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 23  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 23  
 
  113      =2  /* PCA SFR
  114      =2  sfr CCON   = 0xD8;
@@ -1470,7 +1470,7 @@ line level    source
  172      =2  sbit PT0  = IP^1;
  173      =2  sbit PX0  = IP^0;
  174      =2  
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 24  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 24  
 
  175      =2  /*  P3  */
  176      =2  sbit RD   = P3^7;
@@ -1534,7 +1534,7 @@ line level    source
  234      =2  
    8      =1  //----------------IOå£å®šä¹‰----------------//
    9      =1  sbit EC11_A_Now=P1^0;                             //EC11upå¼•è„šå®šä¹‰
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 25  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 25  
 
   10      =1  sbit EC11_B_Now=P1^1;                          //EC11downå¼•è„šå®šä¹‰
   11      =1  sbit EC11_Key=P1^2;                           //EC11ç”µ=ç‚¹å‡»å®šä¹‰                            //EC11çš„æ
@@ -1598,7 +1598,7 @@ line level    source
   57      =1  //è¿”å›žï¼šæ— 
   58      =1  //è¯¦è§£ï¼šå¯¹EC11æ—‹è½¬ç¼–ç å™¨çš„è¿žæŽ¥IOå£åšIOå£æ¨¡å¼è®¾ç½®ã€‚ä»¥åŠå°†ç›¸å…³çš„å˜é‡è¿›è¡Œåˆå§‹
              -åŒ–
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 26  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 26  
 
   59      =1  //*******************************************************************/
   60      =1  void Encoder_EC11_Init(unsigned char Set_EC11_TYPE);
@@ -1662,7 +1662,7 @@ line level    source
  111      =1   
  112      =1  }
  113      =1  //-------->>>>>>>>--------æ³¨æ„äº‹é¡¹ï¼šEC11æ—‹è½¬ç¼–ç å™¨çš„æ‰«ææ—¶é—´é—´éš”æŽ§åˆ¶åœ¨1~4msä¹‹é—´ï¼Œå
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 27  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 27  
 
              -¦åˆ™5msåŠä»¥ä¸Šçš„æ‰«ææ—¶é—´åœ¨å¿«é€Ÿæ—‹è½¬æ—¶å¯èƒ½ä¼šè¯¯åˆ¤æ—‹è½¬æ–¹å‘--------<<<<<<<<--------//
  114      =1  void T0_ISR() interrupt 1
@@ -1726,7 +1726,7 @@ line level    source
   40   1       
   41   1          //--------Çå³ý°´¼ü¼ÆÊýÆ÷ºÍ±êÖ¾Î»--------//
   42   1          EC11_KEY_COUNT = 0;                     //EC11°´¼ü¶¯×÷¼ÆÊýÆ÷
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 28  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 28  
 
   43   1          EC11_KEY_DoubleClick_Count = 0;         //EC11°´¼üË«»÷¶¯×÷¼ÆÊýÆ÷
   44   1          FLAG_EC11_KEY_ShotClick = 0;            //EC11°´¼ü¶Ì°´¶¯×÷±êÖ¾
@@ -1790,7 +1790,7 @@ line level    source
   97   4                      if((EC11_B_Last == EC11_B_Now)&&(EC11_B_Now == 0))  //AÉÏÉýÑØÊ±£¬²É¼¯µÄB²»±äÇÒÎª0
   98   4                          ScanResult = 1;                                 //Õý×ª
   99   4       
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 29  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 29  
 
  100   4                      if((EC11_B_Last == EC11_B_Now)&&(EC11_B_Now == 1))  //AÉÏÉýÑØÊ±£¬²É¼¯µÄB²»±äÇÒÎª1
  101   4                          ScanResult = -1;                                //·´×ª
@@ -1854,7 +1854,7 @@ line level    source
  158   3                  case 1: G_PWM_NUM1+=10; if(G_PWM_NUM1>255)G_PWM_NUM1 = 0;   break;
  159   3                  case 2: G_PWM_NUM2+=10; if(G_PWM_NUM1>255)G_PWM_NUM2 = 0;   break;
  160   3                  case 3: G_PWM_NUM3+=10; if(G_PWM_NUM1>255)G_PWM_NUM3 = 0;   break;
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 30  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 30  
 
  161   3                  case 4: G_PWM_NUM1+=10;     if(G_PWM_NUM1>255)G_PWM_NUM1 = 0;   G_PWM_NUM3 = G_PWM_NUM2 = G_PW
              -M_NUM1;   break;
@@ -1918,7 +1918,7 @@ line level    source
  216   2              if((EC11_KEY_DoubleClick_Count > 0)&&(EC11_KEY_DoubleClick_Count <= KEY_COUNT_DUALCLICKTIME))   //
              -ËÉ¿ª°´¼üºó£¬ÓÖÔÚ¶¨Ê±Æ÷ÔÚË«»÷Ê±¼äÄÚ°´ÏÂ°´¼ü
  217   2              {                                                                                               //
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 31  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 31  
 
              -ÖÃÎ»Ë«»÷°´¼ü±êÖ¾
  218   3                  FLAG_EC11_KEY_DoubleClick = 1;
@@ -1982,7 +1982,7 @@ line level    source
  271   3                  //--------¶Ì°´°´¼ü¶¯×÷½áÊø´úÂë--------//
  272   3                  EC11_NUM_SW++;
  273   3                  if(EC11_NUM_SW >= 4)
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 32  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 32  
 
  274   3                      EC11_NUM_SW = 1;
  275   3                  AnalyzeResult = 1;
@@ -2046,7 +2046,7 @@ line level    source
  332   1          return AnalyzeResult;
  333   1      
  334   1          
-C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 15:54:11 PAGE 33  
+C51 COMPILER V9.54   ENCODEREC11                                                           10/26/2022 16:03:54 PAGE 33  
 
  335   1      }
 
