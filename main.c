@@ -19,14 +19,14 @@ sbit A0 = P4 ^ 0;
 sbit A1 = P4 ^ 1;
 sbit A2 = P4 ^ 2;
 //---------------变量定义---------------//
-unsigned int Volt_Time = 600;   //周期1000us
-unsigned int Volt_OutPut = 300; //目标电压
+ int Volt_Time = 500;   //周期1000us
+ int Volt_OutPut = 500; //目标电压
 unsigned int Volt_Chek;         //检测电压
-void Smg_Show(unsigned int Temp, unsigned int Temp1);
+
 unsigned int output;
-unsigned int chek;
+float chek;
 long int change;
-/***************/
+/*********浮点变量************/
 float SetVoltage;    //定义设定值
 float ActualVoltage; //定义实际值
 float err;           //定义偏差值
@@ -35,7 +35,10 @@ float Kp, Ki, Kd;    //定义比例、积分、微分系数
 float result;        // pid计算结果
 float voltage;       //定义电压值（控制执行器的变量）0-5v右转 5-10v左转
 float integral;      //定义积分值
-/*********************************  */
+/***************函数声明*******************/
+void Smg_Show(unsigned int Temp, unsigned int Temp1);
+
+
 void Delay500us() //@12.000MHz
 {
     unsigned char i;
@@ -158,7 +161,6 @@ void Timer1_isr(void) interrupt 3 using 3
     Encoder_EC11_Analyze(Encoder_EC11_Scan());
 }
 
-
 void Smg_Show(unsigned int Temp, unsigned int Temp1)
 {
 
@@ -219,11 +221,11 @@ void Smg_Show(unsigned int Temp, unsigned int Temp1)
     Delay500us();
     Smg_IO = 0xff;
 }
-void PID()
+void Step()
 {
     if ((output) > chek) // output>chek
     {
-        if (((chek - output) < -2) || ((chek - output) > 2))
+        if (((chek - output) < -1) || ((chek - output) > 1))
         {
 
             if (Volt_Time >= 1200)
@@ -238,7 +240,7 @@ void PID()
     }
     else
     {
-        if (((chek - output) < -2) || ((chek - output) > 2))
+        if (((chek - output) < -1) || ((chek - output) > 1))
         {
 
             if (Volt_Time <= 10)
@@ -251,18 +253,11 @@ void PID()
             }
         }
     }
-
-    //----------防止超限----------//
-    if (Volt_OutPut >= 1200)
-    {
-        Volt_OutPut = 1200;
-    }
-    if (Volt_OutPut <= 100)
-    {
-        Volt_OutPut = 100;
-    }
 }
-/*********PID参数初始化********/
+/*********
+ 函数名称：void PID_Init()
+ 函数功能：PID参数初始化
+ ********/
 void PID_Init()
 {
     SetVoltage = 0.0;    // 设定的预期电压值
@@ -271,7 +266,7 @@ void PID_Init()
     err_last = 0.0;      // 上一次的偏差
     voltage = 0.0;       // 控制电压值
     integral = 0.0;      // 积分值
-    Kp = 0.03;           // 比例系数
+    Kp = 0.5;           // 比例系数
     Ki = 0.000001;       // 积分系数
     Kd = 0.001;          // 微分系数
 }
@@ -285,28 +280,42 @@ float PID_realize(float v, float v_r)
     err_last = err;                                            //留住上一次误差
     return result;
 }
+void limit()
+{
+    if (Volt_OutPut >= 900)
+    {
+        Volt_OutPut = 900;
+    }
+    if (Volt_OutPut <= 0)
+    {
+        Volt_OutPut = 0;
+    }
+    if (Volt_Time >= 1200)
+    {
+        Volt_Time = 1200;
+    }
+    if (Volt_Time <= 0)
+    {
+        Volt_Time = 0;
+    }
+}
+float x;
 void main()
 {
 
     Volt_Init();
     EC11_Init();
-    PID_Init();    
+    PID_Init();
     while (1)
     {
         Volt_Chek = read0832();
         chek = (Volt_Chek * 1.96);
         output = (Volt_OutPut / 2);
-        Smg_Show(Volt_OutPut, chek * 2);
-        change = PID_realize(Volt_OutPut, Volt_Chek * 4);
-        Volt_Time += change;
-        // PID();
-        if (Volt_Time >= 1200)
-        {
-            Volt_Time = 1200;
-        }
-        if (Volt_Time <= 10)
-        {
-            Volt_Time = 10;
-        }
+        x=Volt_Chek * 3.92;
+        Smg_Show(Volt_OutPut,x);
+        //change = PID_realize(Volt_OutPut,  x);
+        //Volt_Time += change;
+        Step();
+        limit();
     }
 }

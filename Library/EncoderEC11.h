@@ -9,7 +9,7 @@
 sbit EC11_A_Now=P1^0;                             //EC11up引脚定义
 sbit EC11_B_Now=P1^1;                          //EC11down引脚定义
 sbit EC11_Key=P1^2;                           //EC11电=点击定义                            //EC11的按键
-extern unsigned int Volt_OutPut;
+extern int Volt_OutPut;
 //----------------编码器动作代码相关定义----------------//
 extern  int G_PWM_NUM1;
 extern  int G_PWM_NUM2;
