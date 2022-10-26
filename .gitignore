@@ -12,3 +12,4 @@ Objects/
 *.orig
 /.vscode
 /*.json
+.vscode

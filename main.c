@@ -1,50 +1,62 @@
 
 #include "intrins.h"
-#include  "EncoderEC11.h"
+#include "EncoderEC11.h"
 #include <STC89C5xRC.H>
 #include "adc0832.h"
 #include "bin.h"
+#define Smg_IO P2
+
 /**************字符库********************/
-code unsigned char smg_ca[14] = {    //共阳极
+code unsigned char smg_ca[14] = { //共阳极
     0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90, 0xff, 0xc6, 0x8c, 0x88};
-code unsigned  char smg_ck[16]={     //共阴极
-    0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
-code unsigned char smgdot_ca[10] = {//带点
+code unsigned char smg_ck[16] = { //共阴极
+    0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f, 0x77, 0x7c, 0x39, 0x5e, 0x79, 0x71};
+code unsigned char smgdot_ca[10] = { //带点
     0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
 //---------------IO定义-----------------//
-sbit Volt_Pwm = P1^6;
-#define Smg_IO P2
+sbit Volt_Pwm = P1 ^ 6;
+sbit A0 = P4 ^ 0;
+sbit A1 = P4 ^ 1;
+sbit A2 = P4 ^ 2;
 //---------------变量定义---------------//
-unsigned int Volt_Time =100; //周期1000us
-unsigned int Volt_OutPut=330;//目标电压
-unsigned int Volt_Chek; //检测电压
-void Smg_Show(unsigned int Temp , unsigned int Temp1);
-int output;
-int chek;
-
-void Delay500us()		//@12.000MHz
+unsigned int Volt_Time = 600;   //周期1000us
+unsigned int Volt_OutPut = 300; //目标电压
+unsigned int Volt_Chek;         //检测电压
+void Smg_Show(unsigned int Temp, unsigned int Temp1);
+unsigned int output;
+unsigned int chek;
+long int change;
+/***************/
+float SetVoltage;    //定义设定值
+float ActualVoltage; //定义实际值
+float err;           //定义偏差值
+float err_last;      //定义上一个偏差值
+float Kp, Ki, Kd;    //定义比例、积分、微分系数
+float result;        // pid计算结果
+float voltage;       //定义电压值（控制执行器的变量）0-5v右转 5-10v左转
+float integral;      //定义积分值
+/*********************************  */
+void Delay500us() //@12.000MHz
 {
-	unsigned char i;
+    unsigned char i;
 
-	_nop_();
-	i = 247;
-	while (--i);
+    _nop_();
+    i = 247;
+    while (--i)
+        ;
 }
-
-
-
 /***********************************************************
 * 名    称：InitTimer0()
 * 功    能：电压控制
 * 入口参数：无
 * 出口参数：无
-* 说    明：12M晶振，12分频，所以计数器每递增一个数就是1微秒，完全满足舵机控制的精度要求
+* 说    明：12M晶振，12分频，所以计数器每递增一个数就是1微秒
             因为定时器是TH0，TL0都要全部计数到0xFF后在计1个数就会产生中断，所以要想产生
-            x毫秒的中断，那么TH0，TL0就应该赋值（0xFFFF-x）	从这个值开始计数产生定时中断
+            x毫秒的中断，那么TH0，TL0就应该赋值（0xFFFF-x） 从这个值开始计数产生定时中断
 /**********************************************************/
 void InitTimer0(void) // 1us
 {
-    
+
     TMOD &= 0xF0; //设置定时器模式
     TMOD |= 0x01; //设置定时器模式
     TL0 = 0xE0;   //设置定时初值
@@ -54,7 +66,7 @@ void InitTimer0(void) // 1us
     ET0 = 1;      //开定时器0中断
     EA = 1;       //开总中断
 }
-void Volt_Init() //舵机初始化
+void Volt_Init() //定时器初始化
 {
     InitTimer0();
 }
@@ -64,9 +76,9 @@ void Volt_Init() //舵机初始化
 * 功    能：给定时器0计数器赋值产生定时中断
 * 入口参数：pwm
 * 出口参数：无
-* 说    明：12M晶振，12分频，所以计数器每递增一个数就是1微秒，完全满足舵机控制的精度要求
+* 说    明：12M晶振，12分频，所以计数器每递增一个数就是1微秒
             因为定时器是TH0，TL0都要全部计数到0xFF后在计1个数就会产生中断，所以要想产生
-            pwm毫秒的中断，那么TH0，TL0就应该赋值（0xFFFF-pwm）	从这个值开始计数产生定时中断
+            pwm毫秒的中断，那么TH0，TL0就应该赋值（0xFFFF-pwm） 从这个值开始计数产生定时中断
 /**********************************************************/
 void Timer0Value(unsigned int pwm)
 {
@@ -99,7 +111,7 @@ void Timer0_isr(void) interrupt 1 using 1
     case 2:
         Volt_Pwm = 1; // PWM控制脚低电平
         //高脉冲结束后剩下的时间(20000-Pwm0Duty)全是低电平了，Pwm0Duty + (20000-Pwm0Duty) = 20000个脉冲正好为一个周期20毫秒
-        Timer0Value(1200-Volt_Time);
+        Timer0Value(1200 - Volt_Time);
         i = 0;
         break;
     }
@@ -117,22 +129,21 @@ void Timer0_isr(void) interrupt 1 using 1
 /**********************************************************/
 void Timer1Init(void) // 4毫秒@12.000MHz
 {
-    //TMOD &= 0x0F; //设置定时器模式
-    //TMOD |= 0x10; //设置定时器模式
-    AUXR &= 0xBF;		//定时器时钟12T模式
-	TMOD &= 0x0F;		//设置定时器模式
-	TL1 = 0x24;		//设置定时初始值
-	TH1 = 0xFA;		//设置定时初始值
+    // TMOD &= 0x0F; //设置定时器模式
+    // TMOD |= 0x10; //设置定时器模式
+    AUXR &= 0xBF; //定时器时钟12T模式
+    TMOD &= 0x0F; //设置定时器模式
+    TL1 = 0x24;   //设置定时初始值
+    TH1 = 0xFA;   //设置定时初始值
     TF1 = 0;      //清除TF1标志
     TR1 = 1;      //定时器1开始计时
     ET1 = 1;      //开定时器1中断
     EA = 1;       //开总中断
 }
-void EC11_Init(void)//EC11编码器初始化
+void EC11_Init(void) // EC11编码器初始化
 {
     Timer1Init();
     Encoder_EC11_Init(0);
-
 }
 /********************************************************
 * 名    称： Timer1_isr() interrupt 3 using 3
@@ -147,120 +158,155 @@ void Timer1_isr(void) interrupt 3 using 3
     Encoder_EC11_Analyze(Encoder_EC11_Scan());
 }
 
-void Timer2Init(void)		//100微秒@12.000MHz
-{
-	T2MOD = 0;     //初始化模式寄存器
-    T2CON = 0;     //初始化控制寄存器
-    TL2 = 0x9C;		//设置定时初始值
-	TH2 = 0xFF;		//设置定时初始值
-	RCAP2L = 0x9C;		//设置定时重载值
-	RCAP2H = 0xFF;		//设置定时重载值
-    TR2 = 1;       //定时器2开始计时
-    PT2 = 0;
-    ET2 = 1;
-    EA = 1;
-}
-void Timer2sir() interrupt 5
-{
-    TR2=0;
-    RCAP2L = 0x9C;		//设置定时重载值
-	RCAP2H = 0xFF;		//设置定时重载值
-    TR2=1;
-    
-    
-}
 
-
-
-sbit A0 = P4^0;
-sbit A1 = P4^1;
-sbit A2 = P4^2;
-void Smg_Show(unsigned int Temp , unsigned int Temp1)
+void Smg_Show(unsigned int Temp, unsigned int Temp1)
 {
 
     A0 = 0;
-    A1=0;
-    A2=0;
-    Smg_IO=smg_ca[(Temp/1000)%10];Delay500us();
-    Smg_IO=0xff;
+    A1 = 0;
+    A2 = 0;
+    Smg_IO = smg_ca[(Temp / 1000) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
-    A0=1;
-    A1=0;
-    A2=0;   
-    Smg_IO=smgdot_ca[(Temp/100)%10];Delay500us();
-    Smg_IO=0xff;
+    A0 = 1;
+    A1 = 0;
+    A2 = 0;
+    Smg_IO = smgdot_ca[(Temp / 100) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
-    A0=0;
-    A1=1;
-    A2=0; 
-    Smg_IO=smg_ca[(Temp/10)%10];Delay500us();
-    Smg_IO=0xff;
+    A0 = 0;
+    A1 = 1;
+    A2 = 0;
+    Smg_IO = smg_ca[(Temp / 10) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
-    A0=1;
-    A1=1;
-    A2=0;
-    Smg_IO=smg_ca[(Temp)%10];Delay500us();
-    Smg_IO=0xff;
+    A0 = 1;
+    A1 = 1;
+    A2 = 0;
+    Smg_IO = smg_ca[(Temp) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
+    //检测电压显示
+    A0 = 0;
+    A1 = 0;
+    A2 = 1;
+    Smg_IO = smg_ca[(Temp1 / 1000) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
-//检测电压显示
-    A0=0;
-    A1=0;
-    A2=1; 
-    Smg_IO=smg_ca[(Temp1/1000)%10];Delay500us();
-    Smg_IO=0xff;
-	
-    A0=1;
-    A1=0;
-    A2=1;   
-    Smg_IO=smgdot_ca[(Temp1/100)%10];Delay500us();
-    Smg_IO=0xff;
+    A0 = 1;
+    A1 = 0;
+    A2 = 1;
+    Smg_IO = smgdot_ca[(Temp1 / 100) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
-    A0=0;
-    A1=1;
-    A2=1; 
-    Smg_IO=smg_ca[(Temp1/10)%10];Delay500us();
-    Smg_IO=0xff;
+    A0 = 0;
+    A1 = 1;
+    A2 = 1;
+    Smg_IO = smg_ca[(Temp1 / 10) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 
-    A0=1;
-    A1=1;
-    A2=1;
-    Smg_IO=smg_ca[(Temp1)%10];Delay500us();
-    Smg_IO=0xff;
-
+    A0 = 1;
+    A1 = 1;
+    A2 = 1;
+    Smg_IO = smg_ca[(Temp1) % 10];
+    Delay500us();
+    Smg_IO = 0xff;
 }
-
-void main()
+void PID()
 {
-	
-    Volt_Init();
-    EC11_Init(); 
-    //Timer2Init();  
-    while (1)
+    if ((output) > chek) // output>chek
     {
-    Smg_Show(output,chek);
-    Volt_Chek=read0832();
-    output=Volt_OutPut;
-    chek=(Volt_Chek*100/51);
-    if((output)>chek)//output>chek
-    {
-        if(((chek-Volt_OutPut)<-2)||((chek-Volt_OutPut)>2))
+        if (((chek - output) < -2) || ((chek - output) > 2))
         {
-            Volt_Time++;
-            if(Volt_Time<=10)
-            {Volt_Time=10;}
-        } 
-        
+
+            if (Volt_Time >= 1200)
+            {
+                Volt_Time = 1200;
+            }
+            else
+            {
+                Volt_Time++;
+            }
+        }
     }
     else
     {
-        if(((chek-Volt_OutPut)<-2)||((chek-Volt_OutPut)>2))
+        if (((chek - output) < -2) || ((chek - output) > 2))
         {
-            Volt_Time--;
-            if(Volt_Time>=1200)
-            {Volt_Time=1200;}
-        } 
+
+            if (Volt_Time <= 10)
+            {
+                Volt_Time = 10;
+            }
+            else
+            {
+                Volt_Time--;
+            }
+        }
     }
+
+    //----------防止超限----------//
+    if (Volt_OutPut >= 1200)
+    {
+        Volt_OutPut = 1200;
     }
-    
+    if (Volt_OutPut <= 100)
+    {
+        Volt_OutPut = 100;
+    }
+}
+/*********PID参数初始化********/
+void PID_Init()
+{
+    SetVoltage = 0.0;    // 设定的预期电压值
+    ActualVoltage = 0.0; // adc实际电压值
+    err = 0.0;           // 当前次实际与理想的偏差
+    err_last = 0.0;      // 上一次的偏差
+    voltage = 0.0;       // 控制电压值
+    integral = 0.0;      // 积分值
+    Kp = 0.03;           // 比例系数
+    Ki = 0.000001;       // 积分系数
+    Kd = 0.001;          // 微分系数
+}
+float PID_realize(float v, float v_r)
+{
+    SetVoltage = v;                                            // 固定电压值传入
+    ActualVoltage = v_r;                                       // 实际电压传入 = ADC_Value * 3.3f/ 4096
+    err = SetVoltage - ActualVoltage;                          //计算偏差
+    integral += err;                                           //积分求和
+    result = Kp * err + Ki * integral + Kd * (err - err_last); //位置式公式
+    err_last = err;                                            //留住上一次误差
+    return result;
+}
+void main()
+{
+
+    Volt_Init();
+    EC11_Init();
+    PID_Init();    
+    while (1)
+    {
+        Volt_Chek = read0832();
+        chek = (Volt_Chek * 1.96);
+        output = (Volt_OutPut / 2);
+        Smg_Show(Volt_OutPut, chek * 2);
+        change = PID_realize(Volt_OutPut, Volt_Chek * 4);
+        Volt_Time += change;
+        // PID();
+        if (Volt_Time >= 1200)
+        {
+            Volt_Time = 1200;
+        }
+        if (Volt_Time <= 10)
+        {
+            Volt_Time = 10;
+        }
+    }
 }

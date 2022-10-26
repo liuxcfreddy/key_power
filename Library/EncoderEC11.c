@@ -2,6 +2,7 @@
 //---->>>>----文件版本：V1.0----<<<<----//
 #include "EncoderEC11.h"
 #include  "stc89c5xrc.h"
+#include <STC89C5xRC.H>
   int G_PWM_NUM1;
   int G_PWM_NUM2;
   int G_PWM_NUM3;
@@ -14,7 +15,7 @@
 //返回：无
 //详解：对EC11旋转编码器的连接IO口做IO口模式设置。以及将相关的变量进行初始化
 //*******************************************************************/
-void Encoder_EC11_Init(unsigned char Set_EC11_TYPE)
+void Encoder_EC11_Init(unsigned char Set_EC11_TYPE)    //EC11类型选择：0-一定位一脉冲；1-两定位一脉冲
 {
     //IO口模式初始化。初始化EC11的IO口为准双向模式
 
@@ -22,7 +23,8 @@ void Encoder_EC11_Init(unsigned char Set_EC11_TYPE)
     EC11_B_Now = 1;
     EC11_Key = 1;
  
-    //EC11类型选择：0-一定位一脉冲；1-两定位一脉冲
+
+
     if(Set_EC11_TYPE == 0)
     {
         EC11_Type = 0;
@@ -186,7 +188,7 @@ char Encoder_EC11_Analyze(char EC11_Value)
     if(EC11_Value == 3)
     {
         //--------编码器按键按下并正转动作代码--------//
-        Volt_OutPut+=1;
+        Volt_OutPut+=15;
         
     }
  
@@ -194,7 +196,7 @@ char Encoder_EC11_Analyze(char EC11_Value)
     if(EC11_Value == -3)
     {
         //--------编码器按键按下并反转动作代码--------//
-        Volt_OutPut-=1;
+        Volt_OutPut-=15;
         
     }
  
@@ -326,5 +328,8 @@ char Encoder_EC11_Analyze(char EC11_Value)
  
  
     }
+    
     return AnalyzeResult;
+
+    
 }
